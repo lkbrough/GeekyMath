@@ -1,6 +1,7 @@
+<!--So this is the XML document! Hopefully this is the first one you looking at so you could be reading this...-->
+<!--Anyway this first few set of lines in this Linear Layout Element should just be left alone but if you're curious I will explain it-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -8,13 +9,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainMenu">
+    <!--The lines labeled layout: These two lines are just setting the size of the viewing area to the screen size... Pretty simple right?-->
+    <!--The lines labeled padding: These lines are setting padding... Really don't worry about this...-->
+    <!--Remove the vertical Screen lock so the user can rotate their screen when they want 1/22/2016-->
 
+    <!--This the first button on the screen! It gives the option for the user to learn and is are wide as the screen and as tall as it needs to be-->
     <Button android:id="@+id/learn"
         android:text="@string/learn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
-
+    
+    <!--This is the second button on the screen giving the option to take a test from decimal to binary-->
     <Button android:text="@string/test1"
         android:id="@+id/l1"
         android:layout_width="match_parent"
@@ -22,6 +28,7 @@
         android:onClick="load"
         />
 
+    <!-- Third button giving the option to take a test from binary to decimal-->
     <Button android:text="@string/test2"
         android:id="@+id/l2"
         android:layout_width="match_parent"
@@ -29,6 +36,7 @@
         android:onClick="load"
         />
 
+    <!-- Fourth button giving the option to take a test of mixed bases. Either from binary to decimal or decimal to binary at random-->
     <Button android:text="@string/test3"
         android:id="@+id/l3"
         android:layout_width="match_parent"
