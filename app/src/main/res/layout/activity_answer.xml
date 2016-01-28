@@ -1,3 +1,4 @@
+<!--This shouldn't be to scary, just note what some of these are...!-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,7 +15,7 @@
         android:layout_width="0dp"
         android:layout_weight="2"
         android:layout_height="wrap_content"
-        />
+        /><!--This is just a basic text view to display if the user was right or wrong... If an error happens it will display null.!-->
 
     <Button
         android:layout_width="0dp"
@@ -22,6 +23,6 @@
         android:layout_height="wrap_content"
         android:text="@string/cont"
         android:onClick="cont"
-        />
+        /><!--Simple button to send back to test class!-->
 
 </LinearLayout>
