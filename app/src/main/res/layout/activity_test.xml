@@ -1,19 +1,20 @@
+<!--This isn't too complicated to understand hopefully. If you get confused just send me an email, text, or talk IRL. I really hope that these comments are helping though-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".Test">
+    tools:context=".Test"><!--Removed pointless screen rotation lock! 1/28/2016-->
 
     <TextView android:id="@+id/direct"
         android:text="@string/instructions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
+    <!--This is the smallest text view on the screen, it is only here to be set and so in the mixed session the user can understand what problem it is.-->
 
     <TextView android:id="@+id/question"
         android:text="@string/invalid"
@@ -21,12 +22,14 @@
         android:layout_height="wrap_content"
         android:lines="1"
         />
+    <!--This is where the question would appear an the invalid current text is typically, if not then it will display null as an error code...-->
 
     <EditText android:id="@+id/answerBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/message"
         />
+    <!--This is the only edit box where the user enters their answer, it is limited to number, even certain numbers, in the java code for this activity-->
 
     <Button android:text="@string/Check"
         android:layout_width="wrap_content"
@@ -34,17 +37,20 @@
         android:onClick="receive"
         android:lines="1"
         />
+    <!--This is what the player presses to submit their answer to be checked.-->
 
     <TextView android:text="@string/streak"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:lines="1"
         />
+    <!--This is a simple locked text box just to label the streak NOTE: Does NOT display number in this field-->
 
     <TextView android:id="@+id/StreakNumber"
         android:text="@string/invalid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
+    <!--This is where the streak number is displayed, it is change each time the activity is started or resumed-->
 
 </LinearLayout>
