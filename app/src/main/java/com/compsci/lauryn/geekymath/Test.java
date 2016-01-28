@@ -76,12 +76,12 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         number.setTextSize(20);//Size down the text so it isn't the main focus on the screen
         number.setText(Integer.toString(streak));//Set the actual streak to the text
 
-        EditText editText = (EditText) findViewById(R.id.answerBox);//Find the 
-        editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+        EditText editText = (EditText) findViewById(R.id.answerBox);//Find the text box where the answer would be
+        editText.setInputType(InputType.TYPE_CLASS_NUMBER);//Limit the keyboard to numbers
         if (type) {
-            editText.setKeyListener(DigitsKeyListener.getInstance("01"));
+            editText.setKeyListener(DigitsKeyListener.getInstance("01"));//Limit the keyboard to only the number 0 and 1
         } else
-            editText.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
+            editText.setKeyListener(DigitsKeyListener.getInstance("0123456789"));//Limit the keyboard... Well not really
     }
 
     @Override
@@ -111,79 +111,79 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         return super.onOptionsItemSelected(item);
     }
 
-    public void generateProblem1(){
-        instructions="Convert the following number to binary.";
-        if(streak<=25&&streak>15){
+    public void generateProblem1(){//First Problem generator, decimal to binary! Let's git started!
+        instructions="Convert the following number to binary.";//Start by setting the instructions just to get this out of the way.
+        if(streak<=25&&streak>15){//This is when the streak comes in. If they get so far adjust the difficulty
             num=(int)(Math.random()*64);
         }
-        else if(streak<=45&&streak>25){
+        else if(streak<=45&&streak>25){//Ditto
             num=(int)(Math.random()*128);
         }
-        else if(streak>=65){
+        else if(streak>=65){//Hardest! I didn't want to go higher than this because this is already pretty insane
             num=(int)(Math.random()*256);
         }
         else{
             num=(int)(Math.random()*32);
         }
-        type=true;
-        ans=Integer.parseInt(Integer.toString(num, 2));
+        type=true;//Used to limit the keyboard
+        ans=Integer.parseInt(Integer.toString(num, 2));//Get the answer in integer form just so it's smaller than a string to save!
     }
 
-    public void generateProblem2(){
-        instructions="Convert the following number to decimal.";
-        if(streak<=25&&streak>15){
-            ans=(int)(Math.random()*64);
+    public void generateProblem2(){//Generate the binary to decimal!
+        instructions="Convert the following number to decimal.";//Set the instructions, out of the way now.
+        if(streak<=25&&streak>15){//Same as above! Just look at generateProblem1()
+            ans=(int)(Math.random()*64);//STOP! Okay so you hopefully noticed that this is the opposite from above! That is because you can literally use the same methods just flip it!
         }
-        else if(streak<=45&&streak>25){
+        else if(streak<=45&&streak>25){//Ditto
             ans=(int)(Math.random()*128);
         }
-        else if(streak>=65){
+        else if(streak>=65){//Ditto
             ans=(int)(Math.random()*256);
         }
         else{
             ans=(int)(Math.random()*32);
         }
-        type=false;
-        num=Integer.parseInt(Integer.toString(ans,2));
+        type=false;//Don't limit the keyboard...
+        num=Integer.parseInt(Integer.toString(ans,2));//Look above at that really really really really really really really long comment. Longer than this one.
     }
 
-    public void generateProblem3(){
-        temp=(int)(Math.random()*2);
-        if(temp==1)
+    public void generateProblem3(){//Interesting one... Let's mix it up!
+        temp=(int)(Math.random()*2);//Pick a number any number! As long as its a 1 or a 2... This is what really mixes it up! Yay!
+        if(temp==1)//If its one... go generate a decimal to binary problem
             generateProblem1();
-        else
+        else//Otherwise do a binary to decimal... Makes since...
             generateProblem2();
     }
 
-    public void receive(View view){
-        Intent intent=new Intent(this, Answer.class);
-        EditText editText=(EditText) findViewById(R.id.answerBox);
+    public void receive(View view){//This will actually get the answer that has been entered, let's take a look.
+        Intent intent=new Intent(this, Answer.class);//Connections, yay.
+        EditText editText=(EditText) findViewById(R.id.answerBox);//Get the answer box... again.
 
-        String message=editText.getText().toString();
-        if(message.isEmpty())
-            correct="Enter an answer";
+        String message=editText.getText().toString();//Get the answer in the box
+        if(message.isEmpty())//Sanity Check! Cuz you never know with people and because I already limited the keyboard they can't enter a letter.
+            correct="Enter an answer";//Yell at the user for being overly silly!
         else {
-            guess = Integer.parseInt(message);
-            check(guess);
+            guess = Integer.parseInt(message);//Get the integer answer from the user
+            check(guess);//Scroll just a little bit to look at this method...
         }
 
-        intent.putExtra(correct, correct);
-        startActivity(intent);
+        intent.putExtra(correct, correct);//Send the response to answer class!
+        startActivity(intent);//Let's start this party! Not really... The answer class is kinda lame...
     }
 
-    private void check(int num1){
+    private void check(int num1){//This is only seperate because I needed to sort the ideas out in my head... Yeah... It makes since
 
-        if(num1==ans) {
-            correct="Correct";
-            streak++;
+        if(num1==ans) {//Isn't this obvious? It's only right if they entered the right number... So it should be equal to... Right?
+            correct="Correct";//Derp
+            streak++;//NEVER FORGET THE SEMICOLON! JK don't forget to increase the streak and make the player feel proud... But don't forget semicolons either...
         }
-        else {
+        else {//I don't know what else it could be... I already Sanity Checked an blank answer out...
             correct="Incorrect";
-            streak=0;
+            streak=0;//I would decrease it by one but this game as no checkpoints, there is now starting at a later level... Or maybe we could add that in later...
         }
     }
 
-    public void stop(){
+    public void stop(){//This is just used for a Error that was happening earlier and seemed like the best patch to cover it with...
         streak=0;
     }
 
