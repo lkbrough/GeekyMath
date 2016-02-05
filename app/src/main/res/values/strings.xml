@@ -1,21 +1,28 @@
 <resources><!--Okay because they never exactly say in tutorials what this file is for, but this is where you store your more permenant strings.!-->
-<!--The real question is why I am going to bother adding comments here... But I am!-->
-    <string name="app_name">Geeky Math</string><!--Doesn't the name of this say it?!-->
-    
+    <!--The real question is why I am going to bother adding comments here... But I am!-->
+    <string name="app_name">Geeky Math</string>
+    <!--Doesn't the name of this say it?!-->
+
     <string name="action_settings">Settings</string>
-    <string name="learn">Learn</string><!--Name the learn class!-->
+    <string name="learn">Learn</string>
+    <!--Name the learn class!-->
     <string name="test1">Decimal to Binary</string>
     <string name="test2">Binary to Decimal</string>
-    <string name="test3">Mixed Decimal/Binary</string><!--Note to self... Maybe word this better!-->
+    <string name="test3">Mixed Decimal/Binary</string>
+    <!--Note to self... Maybe word this better!-->
     <string name="title_activity_test">Test</string>
     <string name="message">Type in your answer</string>
     <string name="Check">Check</string>
     <string name="title_activity_answer">Answer</string>
     <string name="cont">Continue</string>
-    <string name="streak"><br/>Current Streak:</string>
-    <string name="invalid">null</string><!--Yes I made a null string... Deal with it!-->
-    <string name="instructions">Convert the following number to binary.</string><!--Really questioning why I made this...!-->
+    <string name="streak"><br />Current Streak:</string>
+    <string name="invalid">null</string>
+    <!--Yes I made a null string... Deal with it!-->
+    <string name="instructions">Convert the following number to binary.</string>
+    <!--Really questioning why I made this...!-->
     <string name="menu">Main Menu</string>
-    <string name="title_activity_learn">Learn</string><!--Silently questioning why I have the one earlier if Android Studio had made this! Well... I guess this isn't so silent anymore!-->
-    
+    <string name="title_activity_learn">Learn</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <!--Silently questioning why I have the one earlier if Android Studio had made this! Well... I guess this isn't so silent anymore!-->
+
 </resources>
