@@ -41,8 +41,8 @@ public class MainMenu extends AppCompatActivity {//Bare nessesity to Extend some
 
     public void load(View view){//The only method I needed to write to make it work, I personally think I did pretty good job JK I tried
         Intent intent=new Intent(this, Test.class);//Pass between MainMenu and Test Activities
-        if(view.getId()==R.id.learn)
-            intent=new Intent(this, Learn.class);//Change it just because we need to access Learn instead
+        /*if(view.getId()==R.id.learn)
+            intent=new Intent(this, Learn.class);//Change it just because we need to access Learn instead*/
         if(view.getId()==R.id.l3)//Set Global Variables
             Test.level=3;
         else if(view.getId()==R.id.l2)//Ditto
