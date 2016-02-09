@@ -3,19 +3,21 @@ package com.compsci.lauryn.geekymath;//Ignore this, links the project together.
 import android.content.Intent;//Ignore the imports, only brings the methods and classes that are being used.
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 
-public class Answer extends ActionBarActivity {//Basics extend something and because this uses the ActionBar, it made since.
+public class Answer extends AppCompatActivity {//Basics extend something and because this uses the ActionBar, it made since.
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {//Activated as soon as the Activity begins
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer);//Sets the view to the specifications provided by XML document
+
         Intent intent=getIntent();//Retrieving the information put in the intent from the Test aka Correct or not Correct
         String correct=intent.getStringExtra(Test.correct);//Storing the information
 
