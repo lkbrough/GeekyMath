@@ -24,5 +24,10 @@
     <string name="title_activity_learn">Learn</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <!--Silently questioning why I have the one earlier if Android Studio had made this! Well... I guess this isn't so silent anymore!-->
+    <string name="decimalSystem">
+        You should know the number 512.
+
+        But how did you learn that?
+    </string>
 
 </resources>

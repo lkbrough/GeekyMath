@@ -23,7 +23,7 @@ public class Answer extends AppCompatActivity {//Basics extend something and bec
 
         TextView textView=(TextView) findViewById(R.id.response);//Retrieving the textview with pointless information
         textView.setTextSize(40);//Makes it bigger because the activity is blank except for this and the button
-        textView.setText(correct);//Setting it to the proper reasponse
+        textView.setText(correct);//Setting it to the proper response
     }
 
     @Override
