@@ -112,8 +112,28 @@ public class Learn extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_learn, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            TextView textView = (TextView) rootView.findViewById(R.id.learnText);
+            if(getArguments().getInt(ARG_SECTION_NUMBER)==1)
+                textView.setText(getString(R.string.intro));
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==2)
+                textView.setText(getString(R.string.decimalsystem));
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==3) {
+                textView.setText(getString(R.string.reading1));
+                textView = (TextView) rootView.findViewById(R.id.Place1);
+                textView.setText(getString(R.string.fivehundredtwelve));
+                textView = (TextView) rootView.findViewById(R.id.Place2);
+                textView.setText(getString(R.string.reading2));
+                textView = (TextView) rootView.findViewById(R.id.Place3);
+                textView.setText(getString(R.string.ten));
+                textView = (TextView) rootView.findViewById(R.id.Place4);
+                textView.setText(getString(R.string.reading3));
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==4)
+                textView.setText(getString(R.string.bases));
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==5)
+                textView.setText(getString(R.string.finishingup));
+            else
+                textView.setText(getString(R.string.invalid));
             return rootView;
         }
     }

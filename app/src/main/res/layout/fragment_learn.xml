@@ -9,9 +9,29 @@
     tools:context="com.compsci.lauryn.geekymath.Learn$PlaceholderFragment">
 
     <TextView
-        android:id="@+id/section_label"
+        android:id="@+id/learnText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/decimalSystem"/>
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/Place1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/Place2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/Place3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/Place4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>
