@@ -13,7 +13,7 @@
         android:id="@+id/response"
         android:text="@string/invalid"
         android:layout_width="0dp"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         /><!--This is just a basic text view to display if the user was right or wrong... If an error happens it will display null.!-->
 

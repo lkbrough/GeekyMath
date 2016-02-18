@@ -1,5 +1,6 @@
 package com.compsci.lauryn.geekymath;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -50,16 +51,6 @@ public class Learn extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
     }
 
 
@@ -77,6 +68,13 @@ public class Learn extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        if(id==R.id.main_menu){//Adds the button to go to MainMenu and clears streak
+            Test test=new Test();
+            test.stop();
+            Intent intent=new Intent(this,MainMenu.class);
+            startActivity(intent);
+            return true;
+        }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -114,8 +112,28 @@ public class Learn extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_learn, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            TextView textView = (TextView) rootView.findViewById(R.id.learnText);
+            if(getArguments().getInt(ARG_SECTION_NUMBER)==1)
+                textView.setText(getString(R.string.intro));
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==2)
+                textView.setText(getString(R.string.decimalsystem));
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==3) {
+                textView.setText(getString(R.string.reading1));
+                textView = (TextView) rootView.findViewById(R.id.Place1);
+                textView.setText(getString(R.string.fivehundredtwelve));
+                textView = (TextView) rootView.findViewById(R.id.Place2);
+                textView.setText(getString(R.string.reading2));
+                textView = (TextView) rootView.findViewById(R.id.Place3);
+                textView.setText(getString(R.string.ten));
+                textView = (TextView) rootView.findViewById(R.id.Place4);
+                textView.setText(getString(R.string.reading3));
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==4)
+                textView.setText(getString(R.string.bases));
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==5)
+                textView.setText(getString(R.string.finishingup));
+            else
+                textView.setText(getString(R.string.invalid));
             return rootView;
         }
     }
@@ -139,8 +157,8 @@ public class Learn extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // Show 5 total pages.
+            return 5;
         }
 
         @Override
@@ -152,6 +170,10 @@ public class Learn extends AppCompatActivity {
                     return "SECTION 2";
                 case 2:
                     return "SECTION 3";
+                case 3:
+                    return "SECTION 4";
+                case 4:
+                    return "SECTION 5";
             }
             return null;
         }
