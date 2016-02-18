@@ -119,13 +119,13 @@ public class Learn extends AppCompatActivity {
                 textView.setText(getString(R.string.decimalsystem));
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==3) {
                 textView.setText(getString(R.string.reading1));
-                textView = (TextView) rootView.findViewById(R.id.Place1);
+                TextView textView1 = (TextView) rootView.findViewById(R.id.Place1);
                 textView.setText(getString(R.string.fivehundredtwelve));
-                textView = (TextView) rootView.findViewById(R.id.Place2);
+                TextView textView2 = (TextView) rootView.findViewById(R.id.Place2);
                 textView.setText(getString(R.string.reading2));
-                textView = (TextView) rootView.findViewById(R.id.Place3);
+                TextView textView3 = (TextView) rootView.findViewById(R.id.Place3);
                 textView.setText(getString(R.string.ten));
-                textView = (TextView) rootView.findViewById(R.id.Place4);
+                TextView textView4 = (TextView) rootView.findViewById(R.id.Place4);
                 textView.setText(getString(R.string.reading3));
             }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==4)
