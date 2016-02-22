@@ -69,12 +69,11 @@ public class Learn extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id==R.id.main_menu){//Adds the button to go to MainMenu and clears streak
-            Test test=new Test();
-            test.stop();
             Intent intent=new Intent(this,MainMenu.class);
             startActivity(intent);
             return true;
         }
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -113,27 +112,40 @@ public class Learn extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_learn, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.learnText);
+            TextView textView1 = (TextView) rootView.findViewById(R.id.Place1);
+            TextView textView2 = (TextView) rootView.findViewById(R.id.Place2);
+            TextView textView3 = (TextView) rootView.findViewById(R.id.Place3);
+            TextView textView4 = (TextView) rootView.findViewById(R.id.Place4);
             if(getArguments().getInt(ARG_SECTION_NUMBER)==1)
                 textView.setText(getString(R.string.intro));
-            else if(getArguments().getInt(ARG_SECTION_NUMBER)==2)
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==2) {
                 textView.setText(getString(R.string.decimalsystem));
+                textView1 = (TextView) rootView.findViewById(R.id.Place1);
+                textView1.setText(getString(R.string.fivehundredtwelve));
+                textView1.setTextSize(30);
+                textView2.setText(getString(R.string.decimalsystem2));
+                textView2.setTextSize(20);
+            }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==3) {
                 textView.setText(getString(R.string.reading1));
-                TextView textView1 = (TextView) rootView.findViewById(R.id.Place1);
-                textView.setText(getString(R.string.fivehundredtwelve));
-                TextView textView2 = (TextView) rootView.findViewById(R.id.Place2);
-                textView.setText(getString(R.string.reading2));
-                TextView textView3 = (TextView) rootView.findViewById(R.id.Place3);
-                textView.setText(getString(R.string.ten));
-                TextView textView4 = (TextView) rootView.findViewById(R.id.Place4);
-                textView.setText(getString(R.string.reading3));
+                textView1.setText(getString(R.string.fivehundredtwelve));
+                textView1.setTextSize(30);
+                textView2.setText(getString(R.string.reading2));
+                textView2.setTextSize(20);
+                textView3.setText(getString(R.string.ten));
+                textView3.setTextSize(30);
+                textView4.setText(getString(R.string.reading3));
+                textView4.setTextSize(20);
             }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==4)
                 textView.setText(getString(R.string.bases));
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==5)
+                textView.setText(getString(R.string.practiceProblems));
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==6)
                 textView.setText(getString(R.string.finishingup));
             else
                 textView.setText(getString(R.string.invalid));
+            textView.setTextSize(20);
             return rootView;
         }
     }
@@ -157,8 +169,8 @@ public class Learn extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 5 total pages.
-            return 5;
+            // Show 6 total pages.
+            return 6;
         }
 
         @Override
@@ -174,6 +186,8 @@ public class Learn extends AppCompatActivity {
                     return "SECTION 4";
                 case 4:
                     return "SECTION 5";
+                case 5:
+                    return "SECTION 6";
             }
             return null;
         }
