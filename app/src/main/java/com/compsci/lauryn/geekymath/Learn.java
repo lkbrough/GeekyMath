@@ -125,6 +125,8 @@ public class Learn extends AppCompatActivity {
                 textView1.setTextSize(30);
                 textView2.setText(getString(R.string.decimalsystem2));
                 textView2.setTextSize(20);
+                textView3.setText(getString(R.string.decimalsystem3));
+                textView3.setTextSize(20);
             }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==3) {
                 textView.setText(getString(R.string.reading1));
@@ -137,8 +139,11 @@ public class Learn extends AppCompatActivity {
                 textView4.setText(getString(R.string.reading3));
                 textView4.setTextSize(20);
             }
-            else if(getArguments().getInt(ARG_SECTION_NUMBER)==4)
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==4) {
                 textView.setText(getString(R.string.bases));
+                textView1.setText(getString(R.string.bases2));
+                textView1.setTextSize(20);
+            }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==5)
                 textView.setText(getString(R.string.practiceProblems));
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==6)

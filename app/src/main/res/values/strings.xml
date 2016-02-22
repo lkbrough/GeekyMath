@@ -40,7 +40,8 @@
     <string name="decimalsystem2">
         \nWhen you write this out, you\’re saying that you have 5 one hundreds, 1 ten, and 2 ones.
         \n\n
-        \tPlaceholder: Second 512
+    </string>
+    <string name="decimalsystem3">
         \n
         \nThis should be how you first learned how to count with the hundreds and tens places. Now that you\'re refreshed, let\'s move to something new.
     </string>
@@ -68,7 +69,8 @@
         \nSimilar to the decimal system, binary has place values.  However, it uses different places. Instead of the hundreds, tens, and ones places, we have the ones, twos, fours, eights, and so on places.
         \nIn order to help figure out the pattern, check out this chart.
         \n
-        \n\tPlaceholder: Chart
+    </string>
+    <string name="bases2">
         \n
         \nBase 10 and base 2 to the zeroth power both correspond to a place value of one. In fact, the value of the first place equals one for all bases.
         \nNow how about the bases to the first power? Both of them have a place value equal to the base itself. That goes for all bases, but to keep it simple, we\’re still using only these two bases.
