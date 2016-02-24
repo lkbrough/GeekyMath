@@ -1,11 +1,15 @@
 package com.compsci.lauryn.geekymath;//You can ignore this, it's just linking everything together and everything might explode if you remove it(JK)
 
 import android.content.Intent;//These are just simple imports for android. MAKE SURE TO LEAVE THESE HERE!
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 
 public class MainMenu extends AppCompatActivity {//Bare nessesity to Extend some sort of Activity
@@ -15,6 +19,11 @@ public class MainMenu extends AppCompatActivity {//Bare nessesity to Extend some
     protected void onCreate(Bundle savedInstanceState) {//Creates the initial look of the Activity (Activates XML Page)
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        //setContentView(imageView);
+       /* Resources res = getResources();
+        Drawable drawable = res.getDrawable(R.drawable.lemmiwinks);*/
+
     }
 
     @Override
@@ -52,5 +61,15 @@ public class MainMenu extends AppCompatActivity {//Bare nessesity to Extend some
         Test.quest=true;//Just to generate a new question in Test
         startActivity(intent);//Onto Test! (or possibly Learn)
     }
+
+
+    /* @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        final ImageView imageView = new ImageView(this);
+        imageView.setImageResource(R.drawable.lemmiwinks);
+        setContentView(imageView);
+    }*/
+
 
 }

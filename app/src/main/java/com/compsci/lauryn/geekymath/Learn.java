@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Learn extends AppCompatActivity {
@@ -116,8 +117,17 @@ public class Learn extends AppCompatActivity {
             TextView textView2 = (TextView) rootView.findViewById(R.id.Place2);
             TextView textView3 = (TextView) rootView.findViewById(R.id.Place3);
             TextView textView4 = (TextView) rootView.findViewById(R.id.Place4);
-            if(getArguments().getInt(ARG_SECTION_NUMBER)==1)
+
+            ImageView image1= (ImageView) rootView.findViewById(R.id.Image1);
+            ImageView image2= (ImageView) rootView.findViewById(R.id.Image2);
+
+            //ImageView imageView;
+
+            if(getArguments().getInt(ARG_SECTION_NUMBER)==1) {
                 textView.setText(getString(R.string.intro));
+                image1.setImageResource(android.R.color.transparent);
+                image2.setImageResource(android.R.color.transparent);
+            }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==2) {
                 textView.setText(getString(R.string.decimalsystem));
                 textView1 = (TextView) rootView.findViewById(R.id.Place1);
@@ -125,10 +135,18 @@ public class Learn extends AppCompatActivity {
                 textView1.setTextSize(30);
                 textView2.setText(getString(R.string.decimalsystem2));
                 textView2.setTextSize(20);
+                //Image:512
+                //image2.setImage
+                image1.setImageResource(android.R.color.transparent);
+                image2.setImageResource(R.drawable.pic_of_num);
+
                 textView3.setText(getString(R.string.decimalsystem3));
                 textView3.setTextSize(20);
             }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==3) {
+                image1.setImageResource(android.R.color.transparent);
+                image2.setImageResource(android.R.color.transparent);
+
                 textView.setText(getString(R.string.reading1));
                 textView1.setText(getString(R.string.fivehundredtwelve));
                 textView1.setTextSize(30);
@@ -141,13 +159,24 @@ public class Learn extends AppCompatActivity {
             }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==4) {
                 textView.setText(getString(R.string.bases));
+                //Image:Chart
+                //image1.setImage
+                image2.setImageResource(android.R.color.transparent);
+                image1.setImageResource(R.drawable.graph);
+
                 textView1.setText(getString(R.string.bases2));
                 textView1.setTextSize(20);
             }
-            else if(getArguments().getInt(ARG_SECTION_NUMBER)==5)
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==5) {
+                image1.setImageResource(android.R.color.transparent);
+                image2.setImageResource(android.R.color.transparent);
                 textView.setText(getString(R.string.practiceProblems));
-            else if(getArguments().getInt(ARG_SECTION_NUMBER)==6)
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==6) {
+                image1.setImageResource(android.R.color.transparent);
+                image2.setImageResource(android.R.color.transparent);
                 textView.setText(getString(R.string.finishingup));
+            }
             else
                 textView.setText(getString(R.string.invalid));
             textView.setTextSize(20);

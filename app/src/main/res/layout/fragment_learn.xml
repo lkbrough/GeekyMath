@@ -13,6 +13,14 @@
         android:id="@+id/learnText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <!--Place0-->
+
+    <ImageView
+        android:id="@+id/Image1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/graph"/>
 
     <TextView
         android:id="@+id/Place1"
@@ -23,6 +31,13 @@
         android:id="@+id/Place2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/Image2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/pic_of_num"/>
 
     <TextView
         android:id="@+id/Place3"
