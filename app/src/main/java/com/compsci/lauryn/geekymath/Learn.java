@@ -1,8 +1,6 @@
 package com.compsci.lauryn.geekymath;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -22,6 +20,10 @@ import android.widget.TextView;
 
 public class Learn extends AppCompatActivity {
 
+    public static boolean mid;
+    public static boolean passed=false;
+    public static boolean flipper1;
+    public static boolean flipper2;
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -52,6 +54,18 @@ public class Learn extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        if(flipper1){
+            mViewPager.setCurrentItem(8,false);
+            flipper1=false;
+        }
+        else if(flipper2){
+            mViewPager.setCurrentItem(4,false);
+            flipper2=false;
+        }
+        else if(mid){
+            mViewPager.setCurrentItem(8,false);
+            mid=false;
+        }
     }
 
 
@@ -121,12 +135,8 @@ public class Learn extends AppCompatActivity {
             ImageView image1= (ImageView) rootView.findViewById(R.id.Image1);
             ImageView image2= (ImageView) rootView.findViewById(R.id.Image2);
 
-            //ImageView imageView;
-
-            if(getArguments().getInt(ARG_SECTION_NUMBER)==1) {
+            if (getArguments().getInt(ARG_SECTION_NUMBER)==1) {
                 textView.setText(getString(R.string.intro));
-                image1.setImageResource(android.R.color.transparent);
-                image2.setImageResource(android.R.color.transparent);
             }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==2) {
                 textView.setText(getString(R.string.decimalsystem));
@@ -135,18 +145,12 @@ public class Learn extends AppCompatActivity {
                 textView1.setTextSize(30);
                 textView2.setText(getString(R.string.decimalsystem2));
                 textView2.setTextSize(20);
-                //Image:512
-                //image2.setImage
-                image1.setImageResource(android.R.color.transparent);
                 image2.setImageResource(R.drawable.pic_of_num);
 
                 textView3.setText(getString(R.string.decimalsystem3));
                 textView3.setTextSize(20);
             }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==3) {
-                image1.setImageResource(android.R.color.transparent);
-                image2.setImageResource(android.R.color.transparent);
-
                 textView.setText(getString(R.string.reading1));
                 textView1.setText(getString(R.string.fivehundredtwelve));
                 textView1.setTextSize(30);
@@ -156,25 +160,36 @@ public class Learn extends AppCompatActivity {
                 textView3.setTextSize(30);
                 textView4.setText(getString(R.string.reading3));
                 textView4.setTextSize(20);
-            }
-            else if(getArguments().getInt(ARG_SECTION_NUMBER)==4) {
+            } else if (getArguments().getInt(ARG_SECTION_NUMBER)==4) {
                 textView.setText(getString(R.string.bases));
-                //Image:Chart
-                //image1.setImage
-                image2.setImageResource(android.R.color.transparent);
                 image1.setImageResource(R.drawable.graph);
 
                 textView1.setText(getString(R.string.bases2));
                 textView1.setTextSize(20);
             }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==5) {
-                image1.setImageResource(android.R.color.transparent);
-                image2.setImageResource(android.R.color.transparent);
                 textView.setText(getString(R.string.practiceProblems));
             }
-            else if(getArguments().getInt(ARG_SECTION_NUMBER)==6) {
-                image1.setImageResource(android.R.color.transparent);
-                image2.setImageResource(android.R.color.transparent);
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==6){
+                if(passed){
+                    Learn.flipper1=true;
+                }
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==7){
+                    Test.practice = true;
+                    Intent intent = new Intent(getActivity(), Test.class);
+                    startActivity(intent);
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==8){
+                if(passed){
+                    Learn.flipper2=true;
+                }
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==9){
+                textView.setText(getString(R.string.practiceProblems2));
+                textView1.setText(passed+"");
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==10) {
                 textView.setText(getString(R.string.finishingup));
             }
             else
@@ -203,25 +218,33 @@ public class Learn extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 6 total pages.
-            return 6;
+            // Show 10 total pages.
+            return 10;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Introduction";
                 case 1:
-                    return "SECTION 2";
+                    return "Decimal System";
                 case 2:
-                    return "SECTION 3";
+                    return "Reading";
                 case 3:
-                    return "SECTION 4";
+                    return "Binary System";
                 case 4:
-                    return "SECTION 5";
+                    return "Practice Problems Intro";
                 case 5:
-                    return "SECTION 6";
+                    return "Padding/Redirecting Page";
+                case 6:
+                    return "Practice Problems";
+                case 7:
+                    return "Padding/Redirecting Page";
+                case 8:
+                    return "Practice Problems Finishing";
+                case 9:
+                    return "Finishing Up";
             }
             return null;
         }

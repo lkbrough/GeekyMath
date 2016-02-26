@@ -19,8 +19,7 @@
         android:id="@+id/Image1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="centerInside"
-        android:src="@drawable/graph"/>
+        android:scaleType="centerInside" />
 
     <TextView
         android:id="@+id/Place1"
@@ -36,8 +35,7 @@
         android:id="@+id/Image2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="centerInside"
-        android:src="@drawable/pic_of_num"/>
+        android:scaleType="centerInside" />
 
     <TextView
         android:id="@+id/Place3"

@@ -65,25 +65,19 @@
 
     <string name="bases">The decimal system is the system of numbers that we humans read. We use base 10, which is why we have the 10s place.
         \nIn decimal, we have ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. In binary, we have only two digits: 0 and 1.
-        \n
-        \nSimilar to the decimal system, binary has place values.  However, it uses different places. Instead of the hundreds, tens, and ones places, we have the ones, twos, fours, eights, and so on places.
-        \nIn order to help figure out the pattern, check out this chart.
-        \n
+        \nSimilar to the decimal system, binary has place values.  However, it uses different places. Instead of the hundreds, tens, and ones places, we have the ones, twos, fours, eights, and so on places. In order to help figure out the pattern, check out this chart.\n
     </string>
     <string name="bases2">
-        \n
-        \nBase 10 and base 2 to the zeroth power both correspond to a place value of one. In fact, the value of the first place equals one for all bases.
+        \nBase 10 and base 2 to the zeroth power both correspond to a place value of one. In fact, the value of the first place equals one for all bases.\n
         \nNow how about the bases to the first power? Both of them have a place value equal to the base itself. That goes for all bases, but to keep it simple, we\’re still using only these two bases.
-        \n
-        \nDid you notice the third and final pattern in this chart?
         \nTo get the next place value, just multiply the initial place value by the number of the base! In base 10, the place value is multiplied by 10 each time. In base 2 or binary, the place value doubles each time.
         </string>
     <string name="practiceProblems">
         Think you\'re getting it? Let\'s try a few easy practice problems.
-        \n
+        \n</string>
         \n\tPlaceholder: Practice Problems 1
         \n
-        \nGreat job! Did you notice something about those problems? Let\'s take a look at a few.
+    <string name="practiceProblems2">\nGreat job! Did you notice something about those problems? Let\'s take a look at a few.
         \n
         \n\tPlaceholder: Practice Problems 2
         \n
@@ -91,7 +85,7 @@
     </string>
 
     <string name="finishingup">That\’s all there is to it! You should be ready to get out there and start translating binary numbers into decimal numbers for humans to read, and vice versa.\n
-        \nYou can read this over or you can head on back to the home menu and start practicing. Have fun and remember binary!
+        \nYou can read this over again or you can head on back to the home menu by pressing the four rectangles in the top right hand corner and start practicing. Have fun and remember binary!
     </string>
 
 </resources>

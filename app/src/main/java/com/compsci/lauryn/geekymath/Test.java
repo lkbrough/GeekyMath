@@ -25,6 +25,8 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
     public static int streak=0;//This is the players streak. It serves to purposes, making the player feel proud of how many problems they have gotten in a row and to determine if it needs to get harder by increasing the number of bits.
     public static boolean type;//This is set to limit the keyboard or not. It depends on the problem type on the keyboard.
     public static boolean quest;//This is set to generate the problem or not. This only exists because on screen rotation, Android restarts the activity and destroys a lot of data.
+    public static boolean practice;
+    public static int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {//Basic common onCreate to actually start the view for an activity.
@@ -54,7 +56,23 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
     protected void onResume(){//This is a tad bit unique for this class. If you want to know why I am doing this, refer to developer.android.com and check out develop training lesson over managing the activity cycle.
         super.onResume();
 
-        if(quest) {//This is to determine if it needs to generate a new problem. Added because of screen rotation.
+        if(practice){
+            if(count<6)
+            practiceProblems();
+            else {
+                Intent intent = new Intent(this, Learn.class);
+                if(!Learn.passed) {
+                    Learn.mid = true;
+                    Learn.passed = true;
+                }
+                else if(Learn.passed){
+                    Learn.mid=false;
+
+                }
+                startActivity(intent);
+            }
+        }
+        else if(quest) {//This is to determine if it needs to generate a new problem. Added because of screen rotation.
             if (level == 2)//Determine level
                 generateProblem2();//Go check this out, Binary to decimal
             else if (level == 3)//Detemine Level again
@@ -111,6 +129,35 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         return super.onOptionsItemSelected(item);
     }
 
+    public void practiceProblems(){
+        if(count==0) {
+            num = 1;
+            ans = 1;
+        }
+        else if(count==1){
+            num = 2;
+            ans = 10;
+        }
+        else if(count==2){
+            num = 3;
+            ans = 11;
+        }
+        else if(count==3){
+            num=4;
+            ans=100;
+        }
+        else if(count==4){
+            num=7;
+            ans=111;
+        }
+        else if(count==5){
+            num=8;
+            ans=1000;
+        }
+        type=true;
+        instructions="Convert the following number to binary.";
+    }
+
     public void generateProblem1(){//First Problem generator, decimal to binary! Let's git started!
         instructions="Convert the following number to binary.";//Start by setting the instructions just to get this out of the way.
         if(streak<=25&&streak>15){//This is when the streak comes in. If they get so far adjust the difficulty
@@ -160,7 +207,11 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         EditText editText=(EditText) findViewById(R.id.answerBox);//Get the answer box... again.
 
         String message=editText.getText().toString();//Get the answer in the box
-        if(message.isEmpty())//Sanity Check! Cuz you never know with people and because I already limited the keyboard they can't enter a letter.
+        if(message.equals("01010")){
+            count=6;
+            correct="SKIPPED!";//Secret code to skip because I is lazy...
+        }
+        else if(message.isEmpty())//Sanity Check! Cuz you never know with people and because I already limited the keyboard they can't enter a letter.
             correct="Enter an answer";//Yell at the user for being overly silly!
         else {
             guess = Integer.parseInt(message);//Get the integer answer from the user
@@ -176,6 +227,9 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         if(num1==ans) {//Isn't this obvious? It's only right if they entered the right number... So it should be equal to... Right?
             correct="Correct";//Derp
             streak++;//NEVER FORGET THE SEMICOLON! JK don't forget to increase the streak and make the player feel proud... But don't forget semicolons either...
+            if(practice){
+                count++;
+            }
         }
         else {//I don't know what else it could be... I already Sanity Checked an blank answer out...
             correct="Incorrect";
