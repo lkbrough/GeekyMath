@@ -1,8 +1,6 @@
 package com.compsci.lauryn.geekymath;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -17,10 +15,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Learn extends AppCompatActivity {
 
+    public static boolean mid;
+    public static boolean passed=false;
+    public static boolean flipper1;
+    public static boolean flipper2;
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -51,6 +54,18 @@ public class Learn extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        if(flipper1){
+            mViewPager.setCurrentItem(8,false);
+            flipper1=false;
+        }
+        else if(flipper2){
+            mViewPager.setCurrentItem(4,false);
+            flipper2=false;
+        }
+        else if(mid){
+            mViewPager.setCurrentItem(8,false);
+            mid=false;
+        }
     }
 
 
@@ -69,12 +84,11 @@ public class Learn extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id==R.id.main_menu){//Adds the button to go to MainMenu and clears streak
-            Test test=new Test();
-            test.stop();
             Intent intent=new Intent(this,MainMenu.class);
             startActivity(intent);
             return true;
         }
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -113,27 +127,74 @@ public class Learn extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_learn, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.learnText);
-            if(getArguments().getInt(ARG_SECTION_NUMBER)==1)
+            TextView textView1 = (TextView) rootView.findViewById(R.id.Place1);
+            TextView textView2 = (TextView) rootView.findViewById(R.id.Place2);
+            TextView textView3 = (TextView) rootView.findViewById(R.id.Place3);
+            TextView textView4 = (TextView) rootView.findViewById(R.id.Place4);
+
+            ImageView image1= (ImageView) rootView.findViewById(R.id.Image1);
+            ImageView image2= (ImageView) rootView.findViewById(R.id.Image2);
+
+            if (getArguments().getInt(ARG_SECTION_NUMBER)==1) {
                 textView.setText(getString(R.string.intro));
-            else if(getArguments().getInt(ARG_SECTION_NUMBER)==2)
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==2) {
                 textView.setText(getString(R.string.decimalsystem));
+                textView1 = (TextView) rootView.findViewById(R.id.Place1);
+                textView1.setText(getString(R.string.fivehundredtwelve));
+                textView1.setTextSize(30);
+                textView2.setText(getString(R.string.decimalsystem2));
+                textView2.setTextSize(20);
+                image2.setImageResource(R.drawable.pic_of_num);
+
+                textView3.setText(getString(R.string.decimalsystem3));
+                textView3.setTextSize(20);
+            }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==3) {
                 textView.setText(getString(R.string.reading1));
-                TextView textView1 = (TextView) rootView.findViewById(R.id.Place1);
-                textView.setText(getString(R.string.fivehundredtwelve));
-                TextView textView2 = (TextView) rootView.findViewById(R.id.Place2);
-                textView.setText(getString(R.string.reading2));
-                TextView textView3 = (TextView) rootView.findViewById(R.id.Place3);
-                textView.setText(getString(R.string.ten));
-                TextView textView4 = (TextView) rootView.findViewById(R.id.Place4);
-                textView.setText(getString(R.string.reading3));
-            }
-            else if(getArguments().getInt(ARG_SECTION_NUMBER)==4)
+                textView1.setText(getString(R.string.fivehundredtwelve));
+                textView1.setTextSize(30);
+                textView2.setText(getString(R.string.reading2));
+                textView2.setTextSize(20);
+                textView3.setText(getString(R.string.ten));
+                textView3.setTextSize(30);
+                textView4.setText(getString(R.string.reading3));
+                textView4.setTextSize(20);
+            } else if (getArguments().getInt(ARG_SECTION_NUMBER)==4) {
                 textView.setText(getString(R.string.bases));
-            else if(getArguments().getInt(ARG_SECTION_NUMBER)==5)
+                image1.setImageResource(R.drawable.graph);
+
+                textView1.setText(getString(R.string.bases2));
+                textView1.setTextSize(20);
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==5) {
+                textView.setText(getString(R.string.practiceProblems));
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==6){
+                if(passed){
+                    Learn.flipper1=true;
+                }
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==7){
+                    Test.practice = true;
+                    Intent intent = new Intent(getActivity(), Test.class);
+                    startActivity(intent);
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==8){
+                if(passed){
+                    Learn.flipper2=true;
+                }
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==9){
+                textView.setText(getString(R.string.practiceProblems2));
+                textView1.setText(passed+"");
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER)==10) {
                 textView.setText(getString(R.string.finishingup));
+            }
             else
                 textView.setText(getString(R.string.invalid));
+            textView.setTextSize(20);
             return rootView;
         }
     }
@@ -157,23 +218,33 @@ public class Learn extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 5 total pages.
-            return 5;
+            // Show 10 total pages.
+            return 10;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Introduction";
                 case 1:
-                    return "SECTION 2";
+                    return "Decimal System";
                 case 2:
-                    return "SECTION 3";
+                    return "Reading";
                 case 3:
-                    return "SECTION 4";
+                    return "Binary System";
                 case 4:
-                    return "SECTION 5";
+                    return "Practice Problems Intro";
+                case 5:
+                    return "Padding/Redirecting Page";
+                case 6:
+                    return "Practice Problems";
+                case 7:
+                    return "Padding/Redirecting Page";
+                case 8:
+                    return "Practice Problems Finishing";
+                case 9:
+                    return "Finishing Up";
             }
             return null;
         }

@@ -21,75 +21,71 @@
     <string name="instructions">Convert the following number to binary.</string>
     <!--Really questioning why I made this...!-->
     <string name="menu">Main Menu</string>
+    <string name="chart">Chart</string>
     <string name="title_activity_learn">Learn</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <!--Silently questioning why I have the one earlier if Android Studio had made this! Well... I guess this isn't so silent anymore!-->
 
-    <string name="intro">Welcome! Before you practice with converting decimal numbers to binary and vice versa, you\'ll need to learn how.
-    So, this is your place to run through a quick, beginner-friendly tutorial.
-    To navigate the tutorial, just swipe your finger left or right across the screen.
+    <string name="intro">
+        Welcome! Before you practice with converting decimal numbers to binary and vice versa, you\'ll need to learn how.\n
+        \nSo, this is your place to run through a quick, beginner-friendly tutorial.\n
+        \nTo navigate the tutorial, just swipe your finger left or right across the screen.</string>
+
+    <string name="decimalsystem">You should know the number 512. But how did you learn that?\n
+        \nThink back to 2nd grade and remember math class teaching you the 1\'s, 10\'s, and 100\'s places.\n
+        \nNow let\'s write out 512 with the places underneath.
+        \n
     </string>
 
-    <string name="decimalsystem">You should know the number 512. But how did you learn that?
-        Think back to 2nd grade and remember math class teaching you the 1\'s, 10\'s, and 100\'s places.
-        Now let\'s write out 512 with the places underneath.
-
-        Placeholder: First 512
-
-        When you write this out, you\’re saying that you have 5 one hundreds, 1 ten, and 2 ones.
-
-        Placeholder: Second 512
-
-        This should be how you first learned how to count with the hundreds and tens places. Now that you\'re refreshed, let\'s move to something new.
+    <string name="decimalsystem2">
+        \nWhen you write this out, you\’re saying that you have 5 one hundreds, 1 ten, and 2 ones.
+        \n\n
+    </string>
+    <string name="decimalsystem3">
+        \n
+        \nThis should be how you first learned how to count with the hundreds and tens places. Now that you\'re refreshed, let\'s move to something new.
     </string>
 
-    <string name="reading1">So before diving into binary numbers, you need to learn how to read bases other than decimal.
-        When working in other bases, such as binary and octal, it’s easier to think through a problem if you read the digits rather than read the number as a whole.
-
-        Let\’s look at 512 again.
+    <string name="reading1">So before diving into binary numbers, you need to learn how to read bases other than decimal.\n
+        \nWhen working in other bases, such as binary and octal, it’s easier to think through a problem if you read the digits rather than read the number as a whole.
+        \n
+        \nLet\’s look at 512 again.\n
     </string>
 
-    <string name="fivehundredtwelve">512</string>
+    <string name="fivehundredtwelve">\t512</string>
 
-    <string name="reading2">Try reading it as “five, one, two” instead of reading “five hundred twelve”.
-
-        Got it?
-
-        Now do the same thing with
+    <string name="reading2">\nTry reading it as “five, one, two” instead of reading “five hundred twelve”.
+        \nGot it?
+        \nNow do the same thing with\n
     </string>
 
-    <string name="ten">10</string>
+    <string name="ten">\t10</string>
 
-    <string name="reading3">Did you read “ten” or “one, zero”? If you read “ten”, keep practicing. If you read “one, zero”, you\’re on the right track.
-    </string>
+    <string name="reading3">\nDid you read “ten” or “one, zero”? If you read “ten”, keep practicing. If you read “one, zero”, you\'re on the right track.</string>
 
     <string name="bases">The decimal system is the system of numbers that we humans read. We use base 10, which is why we have the 10s place.
-        In decimal, we have ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. In binary, we have only two digits: 0 and 1.
-
-        Similar to the decimal system, binary has place values.  However, it uses different places. Instead of the hundreds, tens, and ones places, we have the ones, twos, fours, eights, and so on places.
-        In order to help figure out the pattern, check out this chart.
-
-        Placeholder: Chart
-
-        Base 10 and base 2 to the zeroth power both correspond to a place value of one. In fact, the value of the first place equals one for all bases.
-        Now how about the bases to the first power? Both of them have a place value equal to the base itself. That goes for all bases, but to keep it simple, we\’re still using only these two bases.
-
-        Did you notice the third and final pattern in this chart?
-        To get the next place value, just multiply the initial place value by the number of the base! In base 10, the place value is multiplied by 10 each time. In base 2 or binary, the place value doubles each time.
-
+        \nIn decimal, we have ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. In binary, we have only two digits: 0 and 1.
+        \nSimilar to the decimal system, binary has place values.  However, it uses different places. Instead of the hundreds, tens, and ones places, we have the ones, twos, fours, eights, and so on places. In order to help figure out the pattern, check out this chart.\n
+    </string>
+    <string name="bases2">
+        \nBase 10 and base 2 to the zeroth power both correspond to a place value of one. In fact, the value of the first place equals one for all bases.\n
+        \nNow how about the bases to the first power? Both of them have a place value equal to the base itself. That goes for all bases, but to keep it simple, we\’re still using only these two bases.
+        \nTo get the next place value, just multiply the initial place value by the number of the base! In base 10, the place value is multiplied by 10 each time. In base 2 or binary, the place value doubles each time.
+        </string>
+    <string name="practiceProblems">
         Think you\'re getting it? Let\'s try a few easy practice problems.
-
-        Placeholder: Practice Problems 1
-
-        Great job! Did you notice something about those problems? Let\'s take a look at a few.
-
-        Placeholder: Practice Problems 2
-
-        Hopefully you know that all these numbers are odd, but do you see something else that their binary equivalents have in common? They all end in 1! The only way to write any odd number in binary is to end it with a one.
+        \n</string>
+        \n\tPlaceholder: Practice Problems 1
+        \n
+    <string name="practiceProblems2">\nGreat job! Did you notice something about those problems? Let\'s take a look at a few.
+        \n
+        \n\tPlaceholder: Practice Problems 2
+        \n
+        \nHopefully you know that all these numbers are odd, but do you see something else that their binary equivalents have in common? They all end in 1! The only way to write any odd number in binary is to end it with a one.
     </string>
 
-    <string name="finishingup">That\’s all there is to it! You should be ready to get out there and start translating binary numbers into decimal numbers for humans to read, and vice versa.
-
-        You can read this over or you can head on back to the home menu and start practicing. Have fun and remember binary!</string>
+    <string name="finishingup">That\’s all there is to it! You should be ready to get out there and start translating binary numbers into decimal numbers for humans to read, and vice versa.\n
+        \nYou can read this over again or you can head on back to the home menu by pressing the four rectangles in the top right hand corner and start practicing. Have fun and remember binary!
+    </string>
 
 </resources>

@@ -3,8 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.compsci.lauryn.geekymath.Learn">
 
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
 
     <item android:id="@+id/main_menu"
         android:icon="@drawable/ic_dashboard_white_18dp"
@@ -12,4 +15,12 @@
         android:orderInCategory="100"
         app:showAsAction="ifRoom"
         />
+
+    <!--<item android:id="@+id/chart"
+        android:icon="@drawable/ic_action_chart"
+        android:title="@string/chart"
+        android:orderInCategory="99"
+        app:showAsAction="ifRoom"
+        />-->
+
 </menu>
