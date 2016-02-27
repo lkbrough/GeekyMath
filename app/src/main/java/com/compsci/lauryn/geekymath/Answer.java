@@ -43,6 +43,7 @@ public class Answer extends AppCompatActivity {//Basics extend something and bec
         if(id==R.id.main_menu){//Adds the button to go to MainMenu and clears streak
             Test test=new Test();
             test.stop();
+            Test.practice=false;
             Intent intent=new Intent(this,MainMenu.class);
             startActivity(intent);
             return true;

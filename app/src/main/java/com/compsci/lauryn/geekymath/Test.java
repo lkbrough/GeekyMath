@@ -20,13 +20,13 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
     public int guess;//This is more of a temporary variable with one purpose, to hold the users response.
     public static int level;//This is the level or mode that the user is playing on. It tells the app what the user wants to play, converting to binary, converting to decimal, or a mix of both at random.
     public int temp;//Generic Temporary Variable... What else can I say?
-    public static String correct="answer";//This is going to be sent to the Answer class in order to diplayed.
+    public static String correct="answer";//This is going to be sent to the Answer class in order to displayed.
     public static String instructions;//This is the instructions that are displayed before the problem. This could be a set string, but it needs to change depending on the level. 
-    public static int streak=0;//This is the players streak. It serves to purposes, making the player feel proud of how many problems they have gotten in a row and to determine if it needs to get harder by increasing the number of bits.
+    private static int streak=0;//This is the players streak. It serves to purposes, making the player feel proud of how many problems they have gotten in a row and to determine if it needs to get harder by increasing the number of bits.
     public static boolean type;//This is set to limit the keyboard or not. It depends on the problem type on the keyboard.
     public static boolean quest;//This is set to generate the problem or not. This only exists because on screen rotation, Android restarts the activity and destroys a lot of data.
-    public static boolean practice;
-    public static int count;
+    public static boolean practice=false;
+    public static int count=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {//Basic common onCreate to actually start the view for an activity.
@@ -57,17 +57,18 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         super.onResume();
 
         if(practice){
-            if(count<9)
+            if(count<10)
             practiceProblems();
             else {
                 Intent intent = new Intent(this, Learn.class);
                 if(!Learn.passed) {
                     Learn.mid = true;
                     Learn.passed = true;
+                    count=10;
+                    streak=0;
                 }
                 else if(Learn.passed){
                     Learn.mid=false;
-
                 }
                 startActivity(intent);
             }
@@ -75,7 +76,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         else if(quest) {//This is to determine if it needs to generate a new problem. Added because of screen rotation.
             if (level == 2)//Determine level
                 generateProblem2();//Go check this out, Binary to decimal
-            else if (level == 3)//Detemine Level again
+            else if (level == 3)//Determine Level again
                 generateProblem3();//Go check this out, Mix the problems up a bit
             else//If there is some major error that happened, in order to not startle the user, just have them do basic decimal to binary
                 generateProblem1();//Go check this out, Decimal to Binary
@@ -119,6 +120,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         if(id==R.id.main_menu){
             Intent intent=new Intent(this,MainMenu.class);
             stop();
+            practice=false;
             startActivity(intent);
             return true;
         }
@@ -251,6 +253,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
 
     public void stop(){//This is just used for a Error that was happening earlier and seemed like the best patch to cover it with...
         streak=0;
+        count=0;
     }
 
 }

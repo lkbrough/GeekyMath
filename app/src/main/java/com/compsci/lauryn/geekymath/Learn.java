@@ -87,6 +87,9 @@ public class Learn extends AppCompatActivity {
             Intent intent=new Intent(this,MainMenu.class);
             mViewPager.setCurrentItem(0);
             passed=false;
+            Test.practice=false;
+            Test test=new Test();
+            test.stop();
             startActivity(intent);
             return true;
         }
