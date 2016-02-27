@@ -57,7 +57,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         super.onResume();
 
         if(practice){
-            if(count<6)
+            if(count<9)
             practiceProblems();
             else {
                 Intent intent = new Intent(this, Learn.class);
@@ -154,6 +154,22 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
             num=8;
             ans=1000;
         }
+        else if(count==6){
+            num=9;
+            ans=1001;
+        }
+        else if(count==7){
+            num=10;
+            ans=1010;
+        }
+        else if(count==8){
+            num=12;
+            ans=1100;
+        }
+        else if(count==9){
+            num=13;
+            ans=1101;
+        }
         type=true;
         instructions="Convert the following number to binary.";
     }
@@ -207,11 +223,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         EditText editText=(EditText) findViewById(R.id.answerBox);//Get the answer box... again.
 
         String message=editText.getText().toString();//Get the answer in the box
-        if(message.equals("01010")){
-            count=6;
-            correct="SKIPPED!";//Secret code to skip because I is lazy...
-        }
-        else if(message.isEmpty())//Sanity Check! Cuz you never know with people and because I already limited the keyboard they can't enter a letter.
+        if(message.isEmpty())//Sanity Check! Cuz you never know with people and because I already limited the keyboard they can't enter a letter.
             correct="Enter an answer";//Yell at the user for being overly silly!
         else {
             guess = Integer.parseInt(message);//Get the integer answer from the user

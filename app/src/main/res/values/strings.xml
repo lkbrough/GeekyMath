@@ -77,12 +77,8 @@
         \n</string>
         \n\tPlaceholder: Practice Problems 1
         \n
-    <string name="practiceProblems2">\nGreat job! Did you notice something about those problems? Let\'s take a look at a few.
-        \n
-        \n\tPlaceholder: Practice Problems 2
-        \n
-        \nHopefully you know that all these numbers are odd, but do you see something else that their binary equivalents have in common? They all end in 1! The only way to write any odd number in binary is to end it with a one.
-    </string>
+    <string name="practiceProblems2">\nGreat job! Did you notice something about those problems? Let\'s take a look at a few.\n</string>
+    <string name="practiceProblems21">\nHopefully you know that all these numbers are odd, but do you see something else that their binary equivalents have in common? They all end in 1! The only way to write any odd number in binary is to end it with a one.</string>
 
     <string name="finishingup">That\’s all there is to it! You should be ready to get out there and start translating binary numbers into decimal numbers for humans to read, and vice versa.\n
         \nYou can read this over again or you can head on back to the home menu by pressing the four rectangles in the top right hand corner and start practicing. Have fun and remember binary!
