@@ -85,6 +85,11 @@ public class Learn extends AppCompatActivity {
 
         if(id==R.id.main_menu){//Adds the button to go to MainMenu and clears streak
             Intent intent=new Intent(this,MainMenu.class);
+            mViewPager.setCurrentItem(0);
+            passed=false;
+            Test.practice=false;
+            Test test=new Test();
+            test.stop();
             startActivity(intent);
             return true;
         }
@@ -187,7 +192,9 @@ public class Learn extends AppCompatActivity {
             }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==9){
                 textView.setText(getString(R.string.practiceProblems2));
-                textView1.setText(passed+"");
+                image1.setImageResource(R.drawable.practiceproblems);
+                textView1.setText(getString(R.string.practiceProblems21));
+                textView1.setTextSize(20);
             }
             else if(getArguments().getInt(ARG_SECTION_NUMBER)==10) {
                 textView.setText(getString(R.string.finishingup));
