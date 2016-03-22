@@ -43,7 +43,7 @@
     </string>
     <string name="decimalsystem3">
         \n
-        \nThis should be how you first learned how to count with the hundreds and tens places. Now that you\'re refreshed, let\'s move to something new.
+        \nThis should be how you first learned how to count with the hundreds and tens places. Now that you\'re refreshed, let\'s move to something new.\n\n
     </string>
 
     <string name="reading1">So before diving into binary numbers, you need to learn how to read bases other than decimal.\n
@@ -61,7 +61,7 @@
 
     <string name="ten">\t10</string>
 
-    <string name="reading3">\nDid you read “ten” or “one, zero”? If you read “ten”, keep practicing. If you read “one, zero”, you\'re on the right track.</string>
+    <string name="reading3">\nDid you read “ten” or “one, zero”? If you read “ten”, keep practicing. If you read “one, zero”, you\'re on the right track.\n\n</string>
 
     <string name="bases">The decimal system is the system of numbers that we humans read. We use base 10, which is why we have the 10s place.
         \nIn decimal, we have ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. In binary, we have only two digits: 0 and 1.

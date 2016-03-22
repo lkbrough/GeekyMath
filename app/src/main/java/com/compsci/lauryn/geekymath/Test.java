@@ -1,5 +1,6 @@
 package com.compsci.lauryn.geekymath;//The Basic link for the whole project again
 //This is the activity/class where the bulk of the app happens aka where the magic happens. There is a lot of different things happening in this class so just bare with me and try and to read all the comments.
+import android.content.Context;
 import android.content.Intent;//The imports to bring what is needed including all the android classes.
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 
 public class Test extends AppCompatActivity {//Extending to make it an activity
@@ -261,8 +265,29 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
     }
 
     public void stop(){//This is just used for a Error that was happening earlier and seemed like the best patch to cover it with...
+        //update(streak);
         streak=0;
         count=0;
     }
+
+    /*public void update(int high){
+        try {
+            FileInputStream fis = openFileInput(MainMenu.filename);
+            FileOutputStream fos = openFileOutput(MainMenu.filename, Context.MODE_PRIVATE);
+            int pHigh=fis.read();
+            if(pHigh<high){
+                fos.write(high);
+            }
+            else{
+                fos.write(pHigh);
+            }
+            fos.close();
+            fis.close();
+        }
+        catch (Exception e){
+            File file=new File(MainMenu.filename);
+            update(high);
+        }
+    }*/
 
 }
