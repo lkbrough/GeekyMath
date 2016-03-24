@@ -107,6 +107,11 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
             editText.setKeyListener(DigitsKeyListener.getInstance("0123456789"));//Limit the keyboard... Well not really
     }
 
+    public void onPause(){
+        super.onPause();
+        quest=true;
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
