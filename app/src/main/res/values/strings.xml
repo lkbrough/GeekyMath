@@ -84,4 +84,10 @@
         \nYou can read this over again or you can head on back to the home menu by pressing the four rectangles in the top right hand corner and start practicing. Have fun and remember binary!
     </string>
 
+    <string name="contact">
+        \nIf you find a bug in the program, please email us at geekymath@gmail.com describing the issue and what happened directly before it occurred.
+        \n\nAny compliments, complaints, concerns, and bugs are fully appreciated by our team. Thank you for testing!
+        \n\n&#169; GeekyMath 2016
+    </string>
+
 </resources>
