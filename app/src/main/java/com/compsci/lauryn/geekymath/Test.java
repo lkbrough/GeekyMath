@@ -1,5 +1,6 @@
 package com.compsci.lauryn.geekymath;//The Basic link for the whole project again
 //This is the activity/class where the bulk of the app happens aka where the magic happens. There is a lot of different things happening in this class so just bare with me and try and to read all the comments.
+import android.content.Context;
 import android.content.Intent;//The imports to bring what is needed including all the android classes.
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 
 public class Test extends AppCompatActivity {//Extending to make it an activity
@@ -101,6 +105,11 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
             editText.setKeyListener(DigitsKeyListener.getInstance("01"));//Limit the keyboard to only the number 0 and 1
         } else
             editText.setKeyListener(DigitsKeyListener.getInstance("0123456789"));//Limit the keyboard... Well not really
+    }
+
+    public void onPause(){
+        super.onPause();
+        quest=true;
     }
 
     @Override
@@ -221,7 +230,10 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
     }
 
     public void receive(View view){//This will actually get the answer that has been entered, let's take a look.
-        Intent intent=new Intent(this, Answer.class);//Connections, yay.
+        //Intent intent=new Intent(this, Answer.class);//Connections, yay.
+
+        TextView tv1=(TextView) findViewById(R.id.answer);//Yay, replacing connections with a more local connection.
+
         EditText editText=(EditText) findViewById(R.id.answerBox);//Get the answer box... again.
 
         String message=editText.getText().toString();//Get the answer in the box
@@ -232,8 +244,14 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
             check(guess);//Scroll just a little bit to look at this method...
         }
 
-        intent.putExtra(correct, correct);//Send the response to answer class!
-        startActivity(intent);//Let's start this party! Not really... The answer class is kinda lame...
+        tv1.setTextSize(40);//It would be small otherwise...
+        tv1.setText(correct);//Instead of sending it to answer
+        editText.setText("");//If we didn't do this the edit box would still have the previous answer
+        quest=true;//Almost forgot this because it is changed in answer
+        onResume();//This should work, refer up toward the top
+
+        //intent.putExtra(correct, correct);//Send the response to answer class!
+        //startActivity(intent);//Let's start this party! Not really... The answer class is kinda lame...
     }
 
     private void check(int num1){//This is only seperate because I needed to sort the ideas out in my head... Yeah... It makes since
@@ -252,8 +270,29 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
     }
 
     public void stop(){//This is just used for a Error that was happening earlier and seemed like the best patch to cover it with...
+        //update(streak);
         streak=0;
         count=0;
     }
+
+    /*public void update(int high){
+        try {
+            FileInputStream fis = openFileInput(MainMenu.filename);
+            FileOutputStream fos = openFileOutput(MainMenu.filename, Context.MODE_PRIVATE);
+            int pHigh=fis.read();
+            if(pHigh<high){
+                fos.write(high);
+            }
+            else{
+                fos.write(pHigh);
+            }
+            fos.close();
+            fis.close();
+        }
+        catch (Exception e){
+            File file=new File(MainMenu.filename);
+            update(high);
+        }
+    }*/
 
 }

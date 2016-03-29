@@ -53,5 +53,11 @@
         android:layout_height="wrap_content"
         />
     <!--This is where the streak number is displayed, it is change each time the activity is started or resumed-->
+    <TextView android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        />
+    <!--This is to be used for replacing the Answer Activity with a single text view-->
 
 </LinearLayout>

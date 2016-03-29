@@ -43,7 +43,7 @@
     </string>
     <string name="decimalsystem3">
         \n
-        \nThis should be how you first learned how to count with the hundreds and tens places. Now that you\'re refreshed, let\'s move to something new.
+        \nThis should be how you first learned how to count with the hundreds and tens places. Now that you\'re refreshed, let\'s move to something new.\n\n
     </string>
 
     <string name="reading1">So before diving into binary numbers, you need to learn how to read bases other than decimal.\n
@@ -61,7 +61,7 @@
 
     <string name="ten">\t10</string>
 
-    <string name="reading3">\nDid you read “ten” or “one, zero”? If you read “ten”, keep practicing. If you read “one, zero”, you\'re on the right track.</string>
+    <string name="reading3">\nDid you read “ten” or “one, zero”? If you read “ten”, keep practicing. If you read “one, zero”, you\'re on the right track.\n\n</string>
 
     <string name="bases">The decimal system is the system of numbers that we humans read. We use base 10, which is why we have the 10s place.
         \nIn decimal, we have ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. In binary, we have only two digits: 0 and 1.
@@ -82,6 +82,12 @@
 
     <string name="finishingup">That\’s all there is to it! You should be ready to get out there and start translating binary numbers into decimal numbers for humans to read, and vice versa.\n
         \nYou can read this over again or you can head on back to the home menu by pressing the four rectangles in the top right hand corner and start practicing. Have fun and remember binary!
+    </string>
+
+    <string name="contact">
+        \nIf you find a bug in the program, please email us at geekymath@gmail.com describing the issue and what happened directly before it occurred.
+        \n\nAny compliments, complaints, concerns, and bugs are fully appreciated by our team. Thank you for testing!
+        \n\n&#169; GeekyMath 2016
     </string>
 
 </resources>

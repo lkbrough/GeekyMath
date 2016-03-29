@@ -15,6 +15,8 @@ import android.widget.ImageView;
 public class MainMenu extends AppCompatActivity {//Bare nessesity to Extend some sort of Activity
 
 
+    //public static final String filename="geekStreak.txt";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {//Creates the initial look of the Activity (Activates XML Page)
         super.onCreate(savedInstanceState);
