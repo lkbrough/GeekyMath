@@ -58,6 +58,8 @@ public class MainMenu extends AppCompatActivity {//Bare nessesity to Extend some
             Test.level=3;
         else if(view.getId()==R.id.l2)//Ditto
             Test.level=2;
+        else if(view.getId()==R.id.l4)
+            Test.level=4;
         else
             Test.level=1;//Ditto as well as a best error send
         Test.quest=true;//Just to generate a new question in Test

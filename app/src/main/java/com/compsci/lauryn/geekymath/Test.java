@@ -19,42 +19,23 @@ import java.io.FileOutputStream;
 
 public class Test extends AppCompatActivity {//Extending to make it an activity
 
-    public static int num;//This is the actual number the user is being tested on
-    public static int ans;//This is the answer to the number that the user is tested on.
-    public int guess;//This is more of a temporary variable with one purpose, to hold the users response.
+    private static int num;//This is the actual number the user is being tested on
+    private static String ans;//This is the answer to the number that the user is tested on.
     public static int level;//This is the level or mode that the user is playing on. It tells the app what the user wants to play, converting to binary, converting to decimal, or a mix of both at random.
-    public int temp;//Generic Temporary Variable... What else can I say?
+    private int temp;//Generic Temporary Variable... What else can I say?
     public static String correct="answer";//This is going to be sent to the Answer class in order to displayed.
-    public static String instructions;//This is the instructions that are displayed before the problem. This could be a set string, but it needs to change depending on the level. 
+    private static String instructions;//This is the instructions that are displayed before the problem. This could be a set string, but it needs to change depending on the level.
     private static int streak=0;//This is the players streak. It serves to purposes, making the player feel proud of how many problems they have gotten in a row and to determine if it needs to get harder by increasing the number of bits.
     public static boolean type;//This is set to limit the keyboard or not. It depends on the problem type on the keyboard.
     public static boolean quest;//This is set to generate the problem or not. This only exists because on screen rotation, Android restarts the activity and destroys a lot of data.
     public static boolean practice=false;
     public static int count=0;
+    private static boolean hexKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {//Basic common onCreate to actually start the view for an activity.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-
-        /*if(level==2) //Moved to Resume to work better with activity life cycle
-            generateProblem2();
-        else if(level==3)
-            generateProblem3();
-        else
-            generateProblem1();
-
-        TextView directions=(TextView) findViewById(R.id.direct);
-        directions.setText(instructions);
-
-        TextView textView=(TextView) findViewById(R.id.question);
-        textView.setTextSize(40);
-        textView.setText(Integer.toString(num)+"\r\n");
-        textView.setLines(1);
-
-        TextView number=(TextView) findViewById(R.id.StreakNumber);
-        number.setTextSize(20);
-        number.setText(Integer.toString(streak));*/
     }
 
     protected void onResume(){//This is a tad bit unique for this class. If you want to know why I am doing this, refer to developer.android.com and check out develop training lesson over managing the activity cycle.
@@ -82,6 +63,8 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
                 generateProblem2();//Go check this out, Binary to decimal
             else if (level == 3)//Determine Level again
                 generateProblem3();//Go check this out, Mix the problems up a bit
+            else if(level ==4)
+                generateProblem4();//Decimal to Hex
             else//If there is some major error that happened, in order to not startle the user, just have them do basic decimal to binary
                 generateProblem1();//Go check this out, Decimal to Binary
 
@@ -100,11 +83,16 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         number.setText(Integer.toString(streak));//Set the actual streak to the text
 
         EditText editText = (EditText) findViewById(R.id.answerBox);//Find the text box where the answer would be
-        editText.setInputType(InputType.TYPE_CLASS_NUMBER);//Limit the keyboard to numbers
-        if (type) {
-            editText.setKeyListener(DigitsKeyListener.getInstance("01"));//Limit the keyboard to only the number 0 and 1
-        } else
-            editText.setKeyListener(DigitsKeyListener.getInstance("0123456789"));//Limit the keyboard... Well not really
+        if(hexKey){
+            editText.setImeOptions(InputType.TYPE_CLASS_NUMBER);
+        }
+        else {
+            editText.setImeOptions(InputType.TYPE_CLASS_NUMBER);//Limit the keyboard to numbers
+            if (type) {
+                editText.setKeyListener(DigitsKeyListener.getInstance("01"));//Limit the keyboard to only the number 0 and 1
+            } else
+                editText.setKeyListener(DigitsKeyListener.getInstance("0123456789"));//Limit the keyboard... Well not really
+        }
     }
 
     public void onPause(){
@@ -143,46 +131,37 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
     public void practiceProblems(){
         if(count==0) {
             num = 1;
-            ans = 1;
         }
         else if(count==1){
             num = 2;
-            ans = 10;
         }
         else if(count==2){
             num = 3;
-            ans = 11;
         }
         else if(count==3){
             num=4;
-            ans=100;
         }
         else if(count==4){
             num=7;
-            ans=111;
         }
         else if(count==5){
             num=8;
-            ans=1000;
         }
         else if(count==6){
             num=9;
-            ans=1001;
         }
         else if(count==7){
             num=10;
-            ans=1010;
         }
         else if(count==8){
             num=12;
-            ans=1100;
         }
         else if(count==9){
             num=13;
-            ans=1101;
         }
         type=true;
         instructions="Convert the following number to binary.";
+        ans=Integer.toString(num,2);
     }
 
     public void generateProblem1(){//First Problem generator, decimal to binary! Let's git started!
@@ -199,26 +178,29 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         else{
             num=(int)(Math.random()*32);
         }
+        hexKey=false;
         type=true;//Used to limit the keyboard
-        ans=Integer.parseInt(Integer.toString(num, 2));//Get the answer in integer form just so it's smaller than a string to save!
+        ans=Integer.toString(num, 2);//Get the answer in integer form just so it's smaller than a string to save!
     }
 
     public void generateProblem2(){//Generate the binary to decimal!
         instructions="Convert the following number to decimal.";//Set the instructions, out of the way now.
         if(streak<=25&&streak>15){//Same as above! Just look at generateProblem1()
-            ans=(int)(Math.random()*64);//STOP! Okay so you hopefully noticed that this is the opposite from above! That is because you can literally use the same methods just flip it!
+            temp=(int)(Math.random()*64);//STOP! Okay so you hopefully noticed that this is the opposite from above! That is because you can literally use the same methods just flip it!
         }
         else if(streak<=45&&streak>25){//Ditto
-            ans=(int)(Math.random()*128);
+            temp=(int)(Math.random()*128);
         }
         else if(streak>=65){//Ditto
-            ans=(int)(Math.random()*256);
+            temp=(int)(Math.random()*256);
         }
         else{
-            ans=(int)(Math.random()*32);
+            temp=(int)(Math.random()*32);
         }
+        hexKey=false;
         type=false;//Don't limit the keyboard...
-        num=Integer.parseInt(Integer.toString(ans,2));//Look above at that really really really really really really really long comment. Longer than this one.
+        ans=Integer.toString(temp);
+        num=Integer.parseInt(Integer.toString(temp,2));//Look above at that really really really really really really really long comment. Longer than this one.
     }
 
     public void generateProblem3(){//Interesting one... Let's mix it up!
@@ -227,6 +209,24 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
             generateProblem1();
         else//Otherwise do a binary to decimal... Makes since...
             generateProblem2();
+    }
+
+    public void generateProblem4(){
+        instructions="Convert the following number to hexadecimal.";
+        if(streak<=25&&streak>15){
+            num=(int)(Math.random()*64);
+        }
+        else if(streak<=45&&streak>25){
+            num=(int)(Math.random()*128);
+        }
+        else if(streak>=65){
+            num=(int)(Math.random()*256);
+        }
+        else{
+            num=(int)(Math.random()*32);
+        }
+        hexKey=true;
+        ans=Integer.toString(num, 16);
     }
 
     public void receive(View view){//This will actually get the answer that has been entered, let's take a look.
@@ -240,8 +240,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         if(message.isEmpty())//Sanity Check! Cuz you never know with people and because I already limited the keyboard they can't enter a letter.
             correct="Enter an answer";//Yell at the user for being overly silly!
         else {
-            guess = Integer.parseInt(message);//Get the integer answer from the user
-            check(guess);//Scroll just a little bit to look at this method...
+            check(message);//Scroll just a little bit to look at this method...
         }
 
         tv1.setTextSize(40);//It would be small otherwise...
@@ -254,9 +253,9 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         //startActivity(intent);//Let's start this party! Not really... The answer class is kinda lame...
     }
 
-    private void check(int num1){//This is only seperate because I needed to sort the ideas out in my head... Yeah... It makes since
+    private void check(String num1){//This is only seperate because I needed to sort the ideas out in my head... Yeah... It makes since
 
-        if(num1==ans) {//Isn't this obvious? It's only right if they entered the right number... So it should be equal to... Right?
+        if(num1.equals(ans)) {//Isn't this obvious? It's only right if they entered the right number... So it should be equal to... Right?
             correct="Correct";//Derp
             streak++;//NEVER FORGET THE SEMICOLON! JK don't forget to increase the streak and make the player feel proud... But don't forget semicolons either...
             if(practice){
