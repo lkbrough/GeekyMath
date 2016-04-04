@@ -26,9 +26,12 @@ public class HexInputIME extends InputMethodService
         AudioManager am = (AudioManager)getSystemService(AUDIO_SERVICE);
         switch(keyCode){
             case Keyboard.KEYCODE_DONE:
+                break;
+
             case Keyboard.KEYCODE_DELETE:
                 am.playSoundEffect(AudioManager.FX_KEYPRESS_DELETE);
                 break;
+
             default: am.playSoundEffect(AudioManager.FX_KEYPRESS_STANDARD);
         }
     }
@@ -41,7 +44,7 @@ public class HexInputIME extends InputMethodService
                 ic.deleteSurroundingText(1, 0);
                 break;
             case Keyboard.KEYCODE_DONE:
-                ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.ACTION_DOWN));
                 break;
             default:
                 char code = (char)primaryCode;

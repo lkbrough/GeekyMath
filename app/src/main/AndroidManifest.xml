@@ -31,7 +31,7 @@
             android:label="@string/title_activity_learn"
             android:theme="@style/AppTheme.NoActionBar"/>
 
-        <service
+        <!--<service
             android:name=".HexInputIME"
             android:label="@string/hex_input_label"
             android:permission="android.permission.BIND_INPUT_METHOD">
@@ -42,7 +42,7 @@
                 <action android:name="android.view.InputMethod"/>
             </intent-filter>
 
-        </service>
+        </service>-->
 
     </application>
 </manifest>

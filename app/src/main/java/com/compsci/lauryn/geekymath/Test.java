@@ -63,8 +63,12 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
                 generateProblem2();//Go check this out, Binary to decimal
             else if (level == 3)//Determine Level again
                 generateProblem3();//Go check this out, Mix the problems up a bit
-            else if(level ==4)
+            else if(level == 4)
                 generateProblem4();//Decimal to Hex
+            else if(level == 5)
+                generateProblem5();
+            else if(level == 6)
+                generateProblem6();
             else//If there is some major error that happened, in order to not startle the user, just have them do basic decimal to binary
                 generateProblem1();//Go check this out, Decimal to Binary
 
@@ -84,10 +88,16 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
 
         EditText editText = (EditText) findViewById(R.id.answerBox);//Find the text box where the answer would be
         if(hexKey){
-            editText.setImeOptions(InputType.TYPE_CLASS_NUMBER);
+            editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+            editText.setImeOptions(R.xml.method);
+            if(type){
+                editText.setKeyListener(DigitsKeyListener.getInstance("0123456789ABCDEF"));
+            }
+            else
+                editText.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
         }
         else {
-            editText.setImeOptions(InputType.TYPE_CLASS_NUMBER);//Limit the keyboard to numbers
+            editText.setInputType(InputType.TYPE_CLASS_NUMBER);//Limit the keyboard to numbers
             if (type) {
                 editText.setKeyListener(DigitsKeyListener.getInstance("01"));//Limit the keyboard to only the number 0 and 1
             } else
@@ -200,7 +210,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         hexKey=false;
         type=false;//Don't limit the keyboard...
         ans=Integer.toString(temp);
-        num=Integer.parseInt(Integer.toString(temp,2));//Look above at that really really really really really really really long comment. Longer than this one.
+        num=Integer.parseInt(Integer.toString(temp, 2));//Look above at that really really really really really really really long comment. Longer than this one.
     }
 
     public void generateProblem3(){//Interesting one... Let's mix it up!
@@ -226,8 +236,37 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
             num=(int)(Math.random()*32);
         }
         hexKey=true;
+        type=false;
         ans=Integer.toString(num, 16);
     }
+
+    public void generateProblem5(){
+        instructions="Convert the following number to hexadecimal.";
+        if(streak<=25&&streak>15){
+            ans=Integer.toString((int)(Math.random()*64));
+        }
+        else if(streak<=45&&streak>25){
+            ans=Integer.toString((int)(Math.random()*128));
+        }
+        else if(streak>=65){
+            ans=Integer.toString((int)(Math.random()*256));
+        }
+        else{
+            ans=Integer.toString((int)(Math.random()*32));
+        }
+        hexKey=true;
+        type=true;
+        num=Integer.parseInt(ans, 16);
+    }
+
+    public void generateProblem6(){//Interesting one... Let's mix it up!
+        temp=(int)(Math.random()*2);//Pick a number any number! As long as its a 1 or a 2... This is what really mixes it up! Yay!
+        if(temp==1)//If its one... go generate a decimal to binary problem
+            generateProblem4();
+        else//Otherwise do a binary to decimal... Makes since...
+            generateProblem5();
+    }
+
 
     public void receive(View view){//This will actually get the answer that has been entered, let's take a look.
         //Intent intent=new Intent(this, Answer.class);//Connections, yay.
