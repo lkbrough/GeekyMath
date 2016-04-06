@@ -22,17 +22,17 @@
             android:name=".Test"
             android:label="@string/title_activity_test"/>
 
-        <activity
+        <!--<activity
             android:name=".Answer"
-            android:label="@string/title_activity_answer"/>
+            android:label="@string/title_activity_answer"/>-->
 
         <activity
             android:name=".Learn"
             android:label="@string/title_activity_learn"
             android:theme="@style/AppTheme.NoActionBar"/>
 
-        <!--<service
-            android:name=".HexInputIME"
+        <service
+            android:name=".hexInput.HexInputIME"
             android:label="@string/hex_input_label"
             android:permission="android.permission.BIND_INPUT_METHOD">
             <meta-data
@@ -42,7 +42,7 @@
                 <action android:name="android.view.InputMethod"/>
             </intent-filter>
 
-        </service>-->
+        </service>
 
     </application>
 </manifest>

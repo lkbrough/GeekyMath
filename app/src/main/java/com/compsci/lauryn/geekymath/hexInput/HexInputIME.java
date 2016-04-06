@@ -1,4 +1,4 @@
-package com.compsci.lauryn.geekymath;
+package com.compsci.lauryn.geekymath.hexInput;
 
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
@@ -7,6 +7,8 @@ import android.media.AudioManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputConnection;
+
+import com.compsci.lauryn.geekymath.R;
 
 public class HexInputIME extends InputMethodService
         implements KeyboardView.OnKeyboardActionListener{
