@@ -1,64 +1,75 @@
 <!--This isn't too complicated to understand hopefully. If you get confused just send me an email, text, or talk IRL. I really hope that these comments are helping though-->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/Layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".Test">
+    android:layout_height="match_parent">
 
-    <TextView android:id="@+id/direct"
-        android:text="@string/instructions"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-    <!--This is the smallest text view on the screen, it is only here to be set and so in the mixed session the user can understand what problem it is.-->
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context=".Test">
 
-    <TextView android:id="@+id/question"
-        android:text="@string/invalid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:lines="1"
-        />
-    <!--This is where the question would appear an the invalid current text is typically, if not then it will display null as an error code...-->
+        <TextView android:id="@+id/direct"
+            android:text="@string/instructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <!--This is the smallest text view on the screen, it is only here to be set and so in the mixed session the user can understand what problem it is.-->
 
-    <EditText android:id="@+id/answerBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/message"
-        android:inputType="number"
-        />
-    <!--This is the only edit box where the user enters their answer, it is limited to number, even certain numbers, in the java code for this activity-->
+        <TextView android:id="@+id/question"
+            android:text="@string/invalid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            />
+        <!--This is where the question would appear an the invalid current text is typically, if not then it will display null as an error code...-->
 
-    <Button android:text="@string/Check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="receive"
-        android:lines="1"
-        />
-    <!--This is what the player presses to submit their answer to be checked.-->
+        <EditText android:id="@+id/answerBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/message"
+            />
+        <!--This is the only edit box where the user enters their answer, it is limited to number, even certain numbers, in the java code for this activity-->
 
-    <TextView android:text="@string/streak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:lines="1"
-        />
-    <!--This is a simple locked text box just to label the streak NOTE: Does NOT display number in this field-->
+        <Button android:text="@string/Check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="receive"
+            android:lines="1"
+            />
+        <!--This is what the player presses to submit their answer to be checked.-->
 
-    <TextView android:id="@+id/StreakNumber"
-        android:text="@string/invalid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-    <!--This is where the streak number is displayed, it is change each time the activity is started or resumed-->
-    <TextView android:id="@+id/answer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:lines="1"
-        />
-    <!--This is to be used for replacing the Answer Activity with a single text view-->
+        <TextView android:text="@string/streak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            />
+        <!--This is a simple locked text box just to label the streak NOTE: Does NOT display number in this field-->
 
-</LinearLayout>
+        <TextView android:id="@+id/StreakNumber"
+            android:text="@string/invalid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <!--This is where the streak number is displayed, it is change each time the activity is started or resumed-->
+        <TextView android:id="@+id/answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            />
+        <!--This is to be used for replacing the Answer Activity with a single text view-->
+
+        <TextView android:id="@+id/ansBox"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            />
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

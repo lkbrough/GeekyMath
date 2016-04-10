@@ -29,6 +29,13 @@
     <string name="title_activity_learn">Learn</string>
     <string name="hex_input_label">HexInput</string>
     <string name="subtype_en_US">English (US)</string>
+
+    <string name="hexInput">Please make sure you are using HexInput as your keyboard.</string>
+    <string name="hexInput2">This can be accessed through Settings, Language and Input, under Keyboard and input Methods.</string>
+    <string name="hexInput3">Check the box next to the words "HexInput".</string>
+    <string name="hexInput4">Select the answer box and check your notifications to change the keyboard..</string>
+
+    <string name="prev">Previous Correct Answer: </string>
     <!--Silently questioning why I have the one earlier if Android Studio had made this! Well... I guess this isn't so silent anymore!-->
 
     <string name="intro">
