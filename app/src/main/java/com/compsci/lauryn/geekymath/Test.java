@@ -28,6 +28,8 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
     public static int count = 0;
     private static boolean hexKey;
     private String prevAns="";
+    private int[] prevQuest=new int[5];
+    private static int loc=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {//Basic common onCreate to actually start the view for an activity.
@@ -174,6 +176,13 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         } else {
             num = (int) (Math.random() * 32);
         }
+        if(noRepeat(num)){
+            generateProblem1();
+        }
+        prevQuest[loc++]=num;
+        if(loc>4){
+            loc=0;
+        }
         hexKey = false;
         type = true;//Used to limit the keyboard
         ans = Integer.toString(num, 2);//Get the answer in integer form just so it's smaller than a string to save!
@@ -289,5 +298,18 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         //update(streak);
         streak = 0;
         count = 0;
+        for(int x=0;x<prevQuest.length;x++){
+            prevQuest[x]=0;
+        }
     }
+
+    public boolean noRepeat(int num1){
+        for(int x:prevQuest){
+            if(num1==x){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
