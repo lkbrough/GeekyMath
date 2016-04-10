@@ -13,6 +13,9 @@
     <string name="test4">Decimal to Hexadecimal</string>
     <string name="test5">Hexadecimal to Decimal</string>
     <string name="test6">Mixed Decimal/Hexadecimal Conversions</string>
+    <!--Random Text that is here simply to seem as though it matters-->
+    <string name="opt">Options</string>
+    <string name="test10">Test your skills</string>
     <!--Note to self... Maybe word this better!-->
     <string name="title_activity_test">Test</string>
     <string name="message">Type in your answer</string>
@@ -80,8 +83,8 @@
     <string name="practiceProblems">
         Think you\'re getting it? Let\'s try a few easy practice problems.
         \n</string>
-        \n\tPlaceholder: Practice Problems 1
-        \n
+    \n\tPlaceholder: Practice Problems 1
+    \n
     <string name="practiceProblems2">\nGreat job! Did you notice something about those problems? Let\'s take a look at a few.\n</string>
     <string name="practiceProblems21">\nHopefully you know that all these numbers are odd, but do you see something else that their binary equivalents have in common? They all end in 1! The only way to write any odd number in binary is to end it with a one.</string>
 
@@ -94,5 +97,7 @@
         \n\nAny compliments, complaints, concerns, and bugs are fully appreciated by our team. Thank you for testing!
         \n\n&#169; GeekyMath 2016
     </string>
+    <string name="title_activity_next">next</string>
+    <string name="title_activity_billy_menu">billyMenu</string>
 
 </resources>
