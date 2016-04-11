@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class Test extends AppCompatActivity {//Extending to make it an activity
 
-    private static int num;//This is the actual number the user is being tested on
+    private static String num;//This is the actual number the user is being tested on
     private static String ans;//This is the answer to the number that the user is tested on.
     public static int level;//This is the level or mode that the user is playing on. It tells the app what the user wants to play, converting to binary, converting to decimal, or a mix of both at random.
     private int temp;//Generic Temporary Variable... What else can I say?
@@ -28,7 +28,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
     public static int count = 0;
     private static boolean hexKey;
     private String prevAns="";
-    private int[] prevQuest=new int[5];
+    private String[] prevQuest=new String[5];
     private static int loc=0;
 
     @Override
@@ -80,17 +80,20 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
 
         TextView textView = (TextView) findViewById(R.id.question);//Find the blank text where the Question should be
         textView.setTextSize(40);//Make it bigger so it is the focus on the screen
-        textView.setText(Integer.toString(num) + "\r\n");//Set the text to the question and go to new line just to clean it up
+        textView.setText(num + "\r\n");//Set the text to the question and go to new line just to clean it up
         textView.setLines(1);//Just to clean it up by making it take a whole line
 
         TextView number = (TextView) findViewById(R.id.StreakNumber);//Find the view where the streak should be
         number.setTextSize(20);//Size down the text so it isn't the main focus on the screen
         number.setText(Integer.toString(streak));//Set the actual streak to the text
 
+        TextView ansBox = (TextView) findViewById(R.id.ansBox);
+        ansBox.setTextSize(20);
         if(!prevAns.equals("")) {
-            TextView ansBox = (TextView) findViewById(R.id.ansBox);
-            ansBox.setTextSize(20);
             ansBox.setText("Previous Correct Answer:" + prevAns);
+        }
+        else{
+            ansBox.setText("");
         }
 
         EditText editText = (EditText) findViewById(R.id.answerBox);//Find the text box where the answer would be
@@ -140,41 +143,41 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
 
     public void practiceProblems() {
         if (count == 0) {
-            num = 1;
+            num = "1";
         } else if (count == 1) {
-            num = 2;
+            num = "2";
         } else if (count == 2) {
-            num = 3;
+            num = "3";
         } else if (count == 3) {
-            num = 4;
+            num = "4";
         } else if (count == 4) {
-            num = 7;
+            num = "7";
         } else if (count == 5) {
-            num = 8;
+            num = "8";
         } else if (count == 6) {
-            num = 9;
+            num = "9";
         } else if (count == 7) {
-            num = 10;
+            num = "10";
         } else if (count == 8) {
-            num = 12;
+            num = "12";
         } else if (count == 9) {
-            num = 13;
+            num = "13";
         }
         type = true;
         instructions = "Convert the following number to binary.";
-        ans = Integer.toString(num, 2);
+        ans = Integer.toString(Integer.parseInt(num), 2);
     }
 
     public void generateProblem1() {//First Problem generator, decimal to binary! Let's git started!
         instructions = "Convert the following number to binary.";//Start by setting the instructions just to get this out of the way.
         if (streak <= 25 && streak > 15) {//This is when the streak comes in. If they get so far adjust the difficulty
-            num = (int) (Math.random() * 64);
+            num = Integer.toString((int) (Math.random() * 64));
         } else if (streak <= 45 && streak > 25) {//Ditto
-            num = (int) (Math.random() * 128);
+            num = Integer.toString((int) (Math.random() * 128));
         } else if (streak >= 65) {//Hardest! I didn't want to go higher than this because this is already pretty insane
-            num = (int) (Math.random() * 256);
+            num = Integer.toString((int) (Math.random() * 256));
         } else {
-            num = (int) (Math.random() * 32);
+            num = Integer.toString((int) (Math.random() * 32));
         }
         if(noRepeat(num)){
             generateProblem1();
@@ -185,7 +188,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         }
         hexKey = false;
         type = true;//Used to limit the keyboard
-        ans = Integer.toString(num, 2);//Get the answer in integer form just so it's smaller than a string to save!
+        ans = Integer.toString(Integer.parseInt(num), 2);//Get the answer in integer form just so it's smaller than a string to save!
     }
 
     public void generateProblem2() {//Generate the binary to decimal!
@@ -202,7 +205,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         hexKey = false;
         type = false;//Don't limit the keyboard...
         ans = Integer.toString(temp);
-        num = Integer.parseInt(Integer.toString(temp, 2));//Look above at that really really really really really really really long comment. Longer than this one.
+        num = Integer.toString(temp, 2);//Look above at that really really really really really really really long comment. Longer than this one.
     }
 
     public void generateProblem3() {//Interesting one... Let's mix it up!
@@ -216,33 +219,34 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
     public void generateProblem4() {
         instructions = "Convert the following number to hexadecimal.";
         if (streak <= 25 && streak > 15) {
-            num = (int) (Math.random() * 64);
+            num = Integer.toString((int) (Math.random() * 64));
         } else if (streak <= 45 && streak > 25) {
-            num = (int) (Math.random() * 128);
+            num = Integer.toString((int) (Math.random() * 128));
         } else if (streak >= 65) {
-            num = (int) (Math.random() * 256);
+            num = Integer.toString((int) (Math.random() * 256));
         } else {
-            num = (int) (Math.random() * 32);
+            num = Integer.toString((int) (Math.random() * 32));
         }
         hexKey = true;
         type = false;
-        ans = Integer.toString(num, 16);
+        ans = Integer.toString(Integer.parseInt(num), 16);
     }
 
     public void generateProblem5() {
-        instructions = "Convert the following number to hexadecimal.";
+        instructions = "Convert the following hexadecimal number to decimal.";
         if (streak <= 25 && streak > 15) {
-            ans = Integer.toString((int) (Math.random() * 64));
+            temp = (int) (Math.random() * 64);
         } else if (streak <= 45 && streak > 25) {
-            ans = Integer.toString((int) (Math.random() * 128));
+            temp = (int) (Math.random() * 128);
         } else if (streak >= 65) {
-            ans = Integer.toString((int) (Math.random() * 256));
+            temp = (int) (Math.random() * 256);
         } else {
-            ans = Integer.toString((int) (Math.random() * 32));
+            temp = (int) (Math.random() * 32);
         }
         hexKey = true;
         type = true;
-        num = Integer.parseInt(ans, 16);
+        num=Integer.toString(temp,16);
+        ans=Integer.toString(temp);
     }
 
     public void generateProblem6() {//Interesting one... Let's mix it up!
@@ -299,13 +303,13 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         streak = 0;
         count = 0;
         for(int x=0;x<prevQuest.length;x++){
-            prevQuest[x]=0;
+            prevQuest[x]="null";
         }
     }
 
-    public boolean noRepeat(int num1){
-        for(int x:prevQuest){
-            if(num1==x){
+    public boolean noRepeat(String num1){
+        for(String x:prevQuest){
+            if(num1.equals(x)){
                 return true;
             }
         }
