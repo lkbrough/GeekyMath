@@ -100,4 +100,16 @@
     <string name="title_activity_next">next</string>
     <string name="title_activity_billy_menu">billyMenu</string>
 
+
+    <string-array name="ya">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+
 </resources>

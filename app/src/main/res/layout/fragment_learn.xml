@@ -16,7 +16,9 @@
         <TextView
             android:id="@+id/learnText"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#adff00"
+            />
         <!--Place0-->
 
         <ImageView
@@ -28,12 +30,16 @@
         <TextView
             android:id="@+id/Place1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#adff00"
+            />
 
         <TextView
             android:id="@+id/Place2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#adff00"
+            />
 
         <ImageView
             android:id="@+id/Image2"
@@ -44,12 +50,16 @@
         <TextView
             android:id="@+id/Place3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#adff00"
+            />
 
         <TextView
             android:id="@+id/Place4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#adff00"
+            />
 
     </LinearLayout>
 

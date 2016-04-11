@@ -8,12 +8,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#31698A"
     tools:context=".Test"><!--Removed pointless screen rotation lock! 1/28/2016-->
 
     <TextView android:id="@+id/direct"
         android:text="@string/instructions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#adff00"
         />
     <!--This is the smallest text view on the screen, it is only here to be set and so in the mixed session the user can understand what problem it is.-->
 
@@ -22,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:lines="1"
+        android:textColor="#adff00"
         />
     <!--This is where the question would appear an the invalid current text is typically, if not then it will display null as an error code...-->
 
@@ -29,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/message"
+        android:textColor="#adff00"
         />
     <!--This is the only edit box where the user enters their answer, it is limited to number, even certain numbers, in the java code for this activity-->
 
@@ -37,6 +41,8 @@
         android:layout_height="wrap_content"
         android:onClick="receive"
         android:lines="1"
+        android:textColor="#00ff00"
+        android:background="#000000"
         />
     <!--This is what the player presses to submit their answer to be checked.-->
 
@@ -44,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:lines="1"
+        android:textColor="#adff00"
         />
     <!--This is a simple locked text box just to label the streak NOTE: Does NOT display number in this field-->
 
@@ -51,12 +58,14 @@
         android:text="@string/invalid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#adff00"
         />
     <!--This is where the streak number is displayed, it is change each time the activity is started or resumed-->
     <TextView android:id="@+id/answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:lines="1"
+        android:textColor="#adff00"
         />
     <!--This is to be used for replacing the Answer Activity with a single text view-->
 
