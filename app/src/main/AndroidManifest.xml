@@ -7,6 +7,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainMenu"
             android:label="@string/app_name">
@@ -20,8 +21,14 @@
             android:name=".Test"
             android:label="@string/title_activity_test" />
         <activity
+            android:label="@string/title_activity_test"
+            android:windowSoftInputMode="stateHidden"
+            />
+
+        <!--<activity
             android:name=".Answer"
-            android:label="@string/title_activity_answer" />
+            android:label="@string/title_activity_answer"/>-->
+
         <activity
             android:name=".Learn"
             android:label="@string/title_activity_learn"
@@ -42,5 +49,6 @@
 
         <activity android:name=".MainActivitywasd"></activity>
     </application>
+</manifest>
 
 </manifest>

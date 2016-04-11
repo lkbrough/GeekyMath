@@ -43,9 +43,6 @@ public class MainMenu extends AppCompatActivity {//Bare nessesity to Extend some
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

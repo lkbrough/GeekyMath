@@ -49,6 +49,20 @@
             android:background="#000000"
             />
 
+        <Button android:text="@string/test5"
+            android:id="@+id/l5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="load"
+            />
+
+        <Button android:text="@string/test6"
+            android:id="@+id/l6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="load"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
