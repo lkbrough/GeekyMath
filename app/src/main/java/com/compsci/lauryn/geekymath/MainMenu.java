@@ -49,6 +49,12 @@ public class MainMenu extends AppCompatActivity {//Bare nessesity to Extend some
 
     public void load(View view){//The only method I needed to write to make it work, I personally think I did pretty good job JK I tried
         Intent intent=new Intent(this, Learn.class);//Pass between MainMenu and Test Activities
+        if(view.getId()==R.id.learn2){
+            Learn.hex=true;
+        }
+        else if(view.getId()==R.id.learn){
+            Learn.hex=false;
+        }
         startActivity(intent);//Onto Test! (or possibly Learn)
     }
     public void billy(View view){

@@ -1,8 +1,9 @@
 <!--So this is the XML document! Hopefully this is the first one you looking at so you could be reading this...-->
 <!--Anyway this first few set of lines in this Linear Layout Element should just be left alone but if you're curious I will explain it-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent">
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/BB">
 
     <LinearLayout
         xmlns:tools="http://schemas.android.com/tools"
@@ -30,6 +31,16 @@
             android:onClick="load"
             />
 
+        <Button android:id="@+id/learn2"
+            android:text="@string/learn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#00ff00"
+            android:background="#000000"
+            android:onClick="load"
+            />
+
         <Button android:id="@+id/test10"
             android:text="@string/test10"
             android:layout_width="match_parent"
@@ -40,28 +51,14 @@
             android:onClick="billy"
             />
 
-        <Button android:id="@+id/opt"
+      <!--  <Button android:id="@+id/opt"
             android:text="@string/opt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textColor="#00ff00"
             android:background="#000000"
-            />
-
-        <Button android:text="@string/test5"
-            android:id="@+id/l5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="load"
-            />
-
-        <Button android:text="@string/test6"
-            android:id="@+id/l6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="load"
-            />
+            />-->
 
         <TextView
             android:layout_width="wrap_content"

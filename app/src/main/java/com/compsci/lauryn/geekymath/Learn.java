@@ -142,20 +142,28 @@ public class Learn extends AppCompatActivity {
             if (hex) {
                 if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
                     textView.setText(R.string.hexIntro);
+                    textView.setTextSize(20);
                     image.setImageResource(R.drawable.sixteenbases2);
                     textView1.setText(R.string.hexIntro2);
+                    textView1.setTextSize(20);
                     image1.setImageResource(R.drawable.pic_of_num);
                     textView2.setText(R.string.hexIntro3);
+                    textView2.setTextSize(20);
                 } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
                     textView.setText(R.string.hexDigits);
+                    textView.setTextSize(20);
                     image.setImageResource(R.drawable.hextable);
-                    textView.setText(R.string.hexDigits2);
+                    textView1.setText(R.string.hexDigits2);
+                    textView1.setTextSize(20);
                 } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
                     textView.setText(R.string.hexIntroB);
+                    textView.setTextSize(20);
                 } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
                     textView.setText(R.string.hexToBin);
+                    textView.setTextSize(20);
                 } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
                     textView.setText(R.string.hexToDec);
+                    textView.setTextSize(20);
                 }
 
             } else {

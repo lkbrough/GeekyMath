@@ -100,75 +100,75 @@
     </string>
 
     <string name ="hexIntro">
-        \nNOTE: Before learning hexadecimal, it is strongly suggested that you first learn binary. Even if you already know binary, we recommend that you review the binary tutorial before proceeding.
-        \nSo, decimal has ten digits. Binary has two. How many does hexadecimal have?
-        \nWell, hexa = six, and deci = ten…so…
-        \nThere’s 16 digits.
-        \nWhat?? How can there by 16 digits?
-        \nCalm down, we’ll explain. But first, let\’s make sure we know the place values.
-        \nAs usual, we get the exponents of the base (in this case, 16) to get the place values.
+        NOTE: Before learning hexadecimal, it is strongly suggested that you first learn binary. Even if you already know binary, we recommend that you review the binary tutorial before proceeding.
+        \n\nSo, decimal has ten digits. Binary has two. How many does hexadecimal have?
+        \n\nWell, hexa = six, and deci = ten…so…
+        \n\nThere’s 16 digits.
+        \n\nWhat?? How can there by 16 digits?
+        \n\nCalm down, we’ll explain. But first, let\’s make sure we know the place values.
+        \n\nAs usual, we get the exponents of the base (in this case, 16) to get the place values.
     </string>
 
     <string name="hexIntro2">
-        \nSo it would look like this.
+        \n\nSo it would look like this.
     </string>
 
     <string name="hexIntro3">
-        \nAnd…we’ll stop there, before the numbers get too big and messy.
+        \n\nAnd…we’ll stop there, before the numbers get too big and messy.
     </string>
 
     <string name ="hexDigits">
-        \n  Now, I\’m going to explain how it\’s possible to have 16 digits.
-        \nWe have our usual ten digits, as you know: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. (Count on your fingers. It really is 10 digits).
-        \nBut if we need 16 digits, we are going to need something else to represent the other 6 digits!
-        \nHere’s the solution: we’ll use letters for the other 6 digits. More specifically, we\’ll use the letters A, B, C, D, E, and F, because those are the first six letters of the alphabet.
-        \nSo, our 16 digits are:
-        \n0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, and F
-        \nI know it seems like it doesn\’t make any sense. But if you think about it, a digit is simply a representation of a value. We can use letters to represent values. The digit A in hexadecimal is the same as the number 10 in decimal, or 1010 in binary.
+        Now, I\’m going to explain how it\’s possible to have 16 digits.
+        \n\nWe have our usual ten digits, as you know: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. (Count on your fingers. It really is 10 digits).
+        \n\nBut if we need 16 digits, we are going to need something else to represent the other 6 digits!
+        \n\nHere’s the solution: we’ll use letters for the other 6 digits. More specifically, we\’ll use the letters A, B, C, D, E, and F, because those are the first six letters of the alphabet.
+        \n\nSo, our 16 digits are:
+        \n\n0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, and F
+        \n\nI know it seems like it doesn\’t make any sense. But if you think about it, a digit is simply a representation of a value. We can use letters to represent values. The digit A in hexadecimal is the same as the number 10 in decimal, or 1010 in binary.
     </string>
 
     <string name="hexDigits2">
-        \nBy the way, you may want to memorize the 16 digits of hexadecimal and what number of the decimal system they correspond to. It’s important in hexadecimal conversions.
+        \n\nBy the way, you may want to memorize the 16 digits of hexadecimal and what number of the decimal system they correspond to. It’s important in hexadecimal conversions.
     </string>
 
     <string name ="hexIntroB">
-        \n  Now that we\’ve learned the concept, it\’s time to learn how to do conversions with hexadecimal.
-        \nBefore we proceed, though, you need to learn just a bit of terminology. Firstly, do you know what a bit is? Think of a bit as a digit in binary, either a 0 or a 1. A byte is what you call eight binary digits put together.
-        \nNow, here’s the most important term you need to know: a nibble. That’s four bits, or one-half of a byte. Basically, a nibble is what you call a group of four binary digits. If you use nibbles when doing conversions with hexadecimal, your life will be easier.
-        \nSimply get the binary number and divide it into groups of four, or nibbles.
-        \n111 1110
-        \nNotice that the first group has only three digits. That\’s okay. Just make sure you divide them into four as much as you can, and you can leave any remainders at the beginning of the number.
-        \nConvert each group of four, or nibble, into decimal. Remember binary conversions? Give yourself a moment to work that out.
-        \nOnce you do that, you have 7 and 14 in decimal. Use the chart, or your own memory. What are 7 and 14 in hexadecimal?
-        \n7 = 7
-        \n14 = E
-        \nSo, 110011110 = 7E in hexadecimal.
+        Now that we’ve learned the concept, it’s time to learn how to do conversions with hexadecimal.
+        \n\nBefore we proceed, though, you need to learn just a bit of terminology. Firstly, do you know what a bit is? Think of a bit as a digit in binary, either a 0 or a 1. A byte is what you call eight binary digits put together.
+        \n\nNow, here’s the most important term you need to know: a nibble. That’s four bits, or one-half of a byte. Basically, a nibble is what you call a group of four binary digits. If you use nibbles when doing conversions with hexadecimal, your life will be easier.
+        \n\nSimply get the binary number and divide it into groups of four, or nibbles.
+        \n\n111 1110
+        \n\nNotice that the first group has only three digits. That\’s okay. Just make sure you divide them into four as much as you can, and you can leave any remainders at the beginning of the number.
+        \n\nConvert each group of four, or nibble, into decimal. Remember binary conversions? Give yourself a moment to work that out.
+        \n\nOnce you do that, you have 7 and 14 in decimal. Use the chart, or your own memory. What are 7 and 14 in hexadecimal?
+        \n\n7 = 7
+        \n\n14 = E
+        \n\nSo, 110011110 = 7E in hexadecimal.
     </string>
 
     <string name = "hexToBin">
-        \n  How do you go from hexadecimal to binary, though?
-        \nLet’s try E3.
-        \nJust do it digit-by-digit, converting each hexadecimal digit into a binary nibble.
-        \n3 in hexadecimal is still 3 in decimal. Look at the chart. The hexadecimal digits don’t get different until you get to 10. Now utilize your binary skills and convert 3 to binary! It turns out to be 0011. Do NOT forget the 0s in the beginning. You will need to put all four digits, even if the first ones are 0, or the answer won’t be right.
-        \nE in hex is 14 in decimal, which is 1110 in binary.
-        \nSo, we have 1110 - 0011. E3 in hex is 11100011 in binary.
+        How do you go from hexadecimal to binary, though?
+        \n\nLet’s try E3.
+        \n\nJust do it digit-by-digit, converting each hexadecimal digit into a binary nibble.
+        \n\n3 in hexadecimal is still 3 in decimal. Look at the chart. The hexadecimal digits don’t get different until you get to 10. Now utilize your binary skills and convert 3 to binary! It turns out to be 0011. Do NOT forget the 0s in the beginning. You will need to put all four digits, even if the first ones are 0, or the answer won’t be right.
+        \n\nE in hex is 14 in decimal, which is 1110 in binary.
+        \n\nSo, we have 1110 - 0011. E3 in hex is 11100011 in binary.
     </string>
 
     <string name = "hexToDec" >
-        \n  I started you off with the hard part this time. Hexadecimal to decimal conversions, and vice versa, are going to seem really easy. In fact, it\’s very similar to converting with decimal and binary, except we are dealing with a different number system this time.
-        \nLet\’s say you have 44 in hexadecimal; how do you convert it to decimal?
-        \nWell, this is just so easy. Multiply each digit by the value of the digit.
-        \n4 x 16 = 64
-        \n4 x 1 = 4
-        \n64 + 4 = 68
-        \n44 in hex is 68 in decimal.
-        \nNow, you can check your work by converting it back. How do you go from decimal to hexadecimal?
-        \nRemember the rule for binary: go as high as you can, but not over. Same thing applies here. Think about the place values for hexadecimal.
-        \nObviously, 256 is too big. Even just one 256 is way bigger than 68. You can, however, multiply 16 by 4 to get 64. You can\’t go beyond that, or the value will be bigger than 68.
-        \n68 – 64 = 4
-        \nNow we have four left. Let\’s put a 4 in the ones place.
-        \nWe end up with 44.
-        \nThat concludes the tutorial. Thanks for sticking around and learning hexadecimal! Go on and practice now, and have fun with your new skills.
+        I started you off with the hard part this time. Hexadecimal to decimal conversions, and vice versa, are going to seem really easy. In fact, it\’s very similar to converting with decimal and binary, except we are dealing with a different number system this time.
+        \n\nLet\’s say you have 44 in hexadecimal; how do you convert it to decimal?
+        \n\nWell, this is just so easy. Multiply each digit by the value of the digit.
+        \n\n4 x 16 = 64
+        \n\n4 x 1 = 4
+        \n\n64 + 4 = 68
+        \n\n44 in hex is 68 in decimal.
+        \n\nNow, you can check your work by converting it back. How do you go from decimal to hexadecimal?
+        \n\nRemember the rule for binary: go as high as you can, but not over. Same thing applies here. Think about the place values for hexadecimal.
+        \n\nObviously, 256 is too big. Even just one 256 is way bigger than 68. You can, however, multiply 16 by 4 to get 64. You can\’t go beyond that, or the value will be bigger than 68.
+        \n\n68 – 64 = 4
+        \n\nNow we have four left. Let\’s put a 4 in the ones place.
+        \n\nWe end up with 44.
+        \n\nThat concludes the tutorial. Thanks for sticking around and learning hexadecimal! Go on and practice now, and have fun with your new skills.
     </string>
 
     <string name="contact">
