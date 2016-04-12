@@ -1,7 +1,7 @@
 <!--So this is the XML document! Hopefully this is the first one you looking at so you could be reading this...-->
 <!--Anyway this first few set of lines in this Linear Layout Element should just be left alone but if you're curious I will explain it-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_width="match_parent">
 
     <LinearLayout

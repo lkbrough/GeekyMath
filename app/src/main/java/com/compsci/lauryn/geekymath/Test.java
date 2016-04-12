@@ -182,10 +182,6 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         if(noRepeat(num)){
             generateProblem1();
         }
-        prevQuest[loc++]=num;
-        if(loc>4){
-            loc=0;
-        }
         hexKey = false;
         type = true;//Used to limit the keyboard
         ans = Integer.toString(Integer.parseInt(num), 2);//Get the answer in integer form just so it's smaller than a string to save!
@@ -201,6 +197,9 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
             temp = (int) (Math.random() * 256);
         } else {
             temp = (int) (Math.random() * 32);
+        }
+        if(noRepeat(num)){
+            generateProblem2();
         }
         hexKey = false;
         type = false;//Don't limit the keyboard...
@@ -227,6 +226,9 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         } else {
             num = Integer.toString((int) (Math.random() * 32));
         }
+        if(noRepeat(num)){
+            generateProblem4();
+        }
         hexKey = true;
         type = false;
         ans = Integer.toString(Integer.parseInt(num), 16);
@@ -242,6 +244,9 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
             temp = (int) (Math.random() * 256);
         } else {
             temp = (int) (Math.random() * 32);
+        }
+        if(noRepeat(num)){
+            generateProblem5();
         }
         hexKey = true;
         type = true;
@@ -312,6 +317,10 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
             if(num1.equals(x)){
                 return true;
             }
+        }
+        prevQuest[loc++]=num1;
+        if(loc>4){
+            loc=0;
         }
         return false;
     }
