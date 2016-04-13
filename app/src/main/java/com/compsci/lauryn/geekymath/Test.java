@@ -299,6 +299,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         }
         else if(num1.equals("01010")&&practice) {
             count = 11;
+            correct="Developer Skip!";
         }
         else{//I don't know what else it could be... I already Sanity Checked an blank answer out...
             correct = "Incorrect";

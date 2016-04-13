@@ -165,7 +165,7 @@ public class Learn extends AppCompatActivity {
                     textView.setText(R.string.hexToDec);
                     textView.setTextSize(20);
                     textView1.setText(R.string.hexInput);
-                    textView.setTextSize(20);
+                    textView1.setTextSize(20);
                 }
 
             } else {
@@ -187,20 +187,22 @@ public class Learn extends AppCompatActivity {
                 else if(getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
                     textView.setText(getString(R.string.reading1));
                     textView1.setTextSize(20);
-                    imageView1.setImageResource(R.drawable.binaryplaces);
+                    imageView1.setImageResource(R.drawable.tenexponent);
                     textView2.setText(getString(R.string.reading2));
                     textView2.setTextSize(20);
-                    imageView2.setImageResource(R.drawable.binaryplaces);
+                    imageView2.setImageResource(R.drawable.biexponent);
                     textView4.setText(getString(R.string.reading3));
                     textView4.setTextSize(20);
                     imageView4.setImageResource(R.drawable.binaryplaces);
                 } else if (getArguments().getInt(ARG_SECTION_NUMBER)==4) {
-                    imageView1.setImageResource(R.drawable.fiveplace);
+                    imageView.setImageResource(R.drawable.fiveplace);
                     textView.setText(getString(R.string.bases));
-                    imageView.setImageResource(R.drawable.graph);
-
+                    imageView1.setImageResource(R.drawable.graph);
+                    imageView2.setImageResource(R.drawable.nineplace);
                     textView1.setText(getString(R.string.bases2));
                     textView1.setTextSize(20);
+                    textView2.setText(getString(R.string.bases3));
+                    textView2.setTextSize(20);
                 }
                 else if(getArguments().getInt(ARG_SECTION_NUMBER)==5) {
                     textView.setText(getString(R.string.practiceProblems));

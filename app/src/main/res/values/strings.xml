@@ -39,6 +39,8 @@
         \nCheck the box next to the words "HexInput".
         \nSelect the answer box and check your notifications to change the keyboard..</string>
 
+    <string name="hexInputShort">Please ensure that you are using the HexInput Keyboard.</string>
+
     <string name="prev">Previous Correct Answer: </string>
     <!--Silently questioning why I have the one earlier if Android Studio had made this! Well... I guess this isn't so silent anymore!-->
 
@@ -48,23 +50,23 @@
         \nTo navigate the tutorial, just swipe your finger left or right across the screen.</string>
 
     <string name="decimalsystem">So, we all know the number 512. But why does 512 equal, well…512? How do we determine its value?\n
-        \nWe have a system.It\’s called decimal, or base 10, and you learned it in elementary school.\n
+        \nWe have a system. It’s called decimal, or base 10, and you learned it in elementary school.\n
         \nThink back to 2nd grade when you first learned the place values.\n
         \n
     </string>
 
     <string name="decimalsystem2">
         \nHow would we calculate 512?\n
-        \n5 is in nthe hundreds place, so we multiply: 5 x 100 = 500\n
+        \n5 is in the hundreds place, so we multiply: 5 x 100 = 500\n
         \n1 is in the tens place, so we multiply: 1 x 10 = 10\n
         \n2 is in the ones place, so we multiply: 2 x 1 = 2\n
-        \n500 + 10 +2 = 512\n
+        \n500 + 10 + 2 = 512\n
         \nSo that\’s how we know the value of 512!\n
         \n
     </string>
     <string name="decimalsystem3">
         \n
-        \nIf all of this is sounding really basic, that\’s because it is. However, it\’s all for your benefit, trust me.\n\n
+        \nIf all of this is sounding really basic, that’s because it is. However, it\’s all for your benefit, trust me.\n\n
     </string>
 
     <string name="reading1">The hundreds place has a value of 100 (that’s why we multiply 5 by 100). And the tens place has a value of 10, and the ones place has a value of 1. Etc, etc.\n
@@ -72,9 +74,10 @@
         \nWell, exponents play a big role in that. Think about it.
     </string>
 
-    <string name="reading2">Seeing the pattern?\n
+    <string name="reading2">\nSeeing the pattern?\n
         \nEvery system has a specific base that it\’s built around. In the decimal system, we use base 10, which is why we use the exponents of ten to get the place values!\n
-        \nBut what if we were using binary?\n \nIn binary, we use base two. So, if we want to get the place values, we would have to use the exponents of two, just like we used the exponents of ten to get the place values for the decimal system.
+        \nBut what if we were using binary?\n
+        \nIn binary, we use base two. So, if we want to get the place values, we would have to use the exponents of two, just like we used the exponents of ten to get the place values for the decimal system.\n
     </string>
 
     <string name="reading3">And so on.\n
@@ -87,10 +90,11 @@
         \n0 is in the 2s place. 1 x 2 = 0\n
         \n1 is in the 1s place. 1 x 1 = 1\n
         \n4 + 0 + 1 = 5\n
-        \nNotice that the only digits we can use for binary are 0 and 1.\n
-</string>
+        </string>
 
-    <string name="bases2">\nNow let\’s try converting numbers from decimal to binary.\n
+        <string name="bases2">\nNotice that the only digits we can use for binary are 0 and 1.\n</string>
+
+    <string name="bases3">\nNow let\’s try converting numbers from decimal to binary.\n
     \nLet\’s say you have the number 9 in base 10 (or decimal).\n
     \nWell, let\’s set up the place values for binary.\n
     \nThe important thing when converting numbers from decimal to binary is the trick \“Go as high as you can, but no higher\”.\n
@@ -116,7 +120,8 @@
     <string name="practiceProblems2">Great job! Did you notice something about those problems? Let\'s take a look at a few.\n</string>
     <string name="practiceProblems21">\nHopefully you know that all these numbers are odd, but do you see something else that their binary equivalents have in common? They all end in 1! The only way to write any odd number in binary is to end it with a one.</string>
 
-    <string name="finishingup">That’s all there is to it\n You can read this over again or you can head on back to the home menu by pressing the four rectangles in the top right hand corner and start practicing.\n
+    <string name="finishingup">That’s all there is to it\n
+        \nYou can read this over again or you can head on back to the home menu by pressing the four rectangles in the top right hand corner and start practicing.\n
         \nDon\'t forget to expand to the Hexadecimal system when you\'re ready!\n
     </string>
 
@@ -126,7 +131,7 @@
         \n\nWell, hexa = six, and deci = ten…so…
         \n\nThere’s 16 digits.
         \n\nWhat?? How can there by 16 digits?
-        \n\nCalm down, we’ll explain. But first, let\’s make sure we know the place values.
+        \n\nCalm down, we’ll explain. But first, let’s make sure we know the place values.
         \n\nAs usual, we get the exponents of the base (in this case, 16) to get the place values.\n
     </string>
 
@@ -139,13 +144,13 @@
     </string>
 
     <string name ="hexDigits">
-        Now, I\’m going to explain how it\’s possible to have 16 digits.
+        Now, I’m going to explain how it\’s possible to have 16 digits.
         \n\nWe have our usual ten digits, as you know: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. (Count on your fingers. It really is 10 digits).
         \n\nBut if we need 16 digits, we are going to need something else to represent the other 6 digits!
         \n\nHere’s the solution: we’ll use letters for the other 6 digits. More specifically, we\’ll use the letters A, B, C, D, E, and F, because those are the first six letters of the alphabet.
         \n\nSo, our 16 digits are:
         \n\n0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, and F
-        \n\nI know it seems like it doesn\’t make any sense. But if you think about it, a digit is simply a representation of a value. We can use letters to represent values. The digit A in hexadecimal is the same as the number 10 in decimal, or 1010 in binary.
+        \n\nI know it seems like it doesn’t make any sense. But if you think about it, a digit is simply a representation of a value. We can use letters to represent values. The digit A in hexadecimal is the same as the number 10 in decimal, or 1010 in binary.\n
     </string>
 
     <string name="hexDigits2">
