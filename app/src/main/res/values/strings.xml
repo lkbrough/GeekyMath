@@ -33,10 +33,11 @@
     <string name="hex_input_label">HexInput</string>
     <string name="subtype_en_US">English (US)</string>
 
-    <string name="hexInput">Please make sure you are using HexInput as your keyboard.</string>
-    <string name="hexInput2">This can be accessed through Settings, Language and Input, under Keyboard and input Methods.</string>
-    <string name="hexInput3">Check the box next to the words "HexInput".</string>
-    <string name="hexInput4">Select the answer box and check your notifications to change the keyboard..</string>
+    <string name="hexInput">
+        \n\nWhen using our hexadecimal tests, please make sure you are using HexInput as your keyboard.
+        \n\nThis can be accessed through Settings, Language and Input, under Keyboard and input Methods.
+        \nCheck the box next to the words "HexInput".
+        \nSelect the answer box and check your notifications to change the keyboard..</string>
 
     <string name="prev">Previous Correct Answer: </string>
     <!--Silently questioning why I have the one earlier if Android Studio had made this! Well... I guess this isn't so silent anymore!-->
@@ -46,57 +47,77 @@
         \nSo, this is your place to run through a quick, beginner-friendly tutorial.\n
         \nTo navigate the tutorial, just swipe your finger left or right across the screen.</string>
 
-    <string name="decimalsystem">You should know the number 512. But how did you learn that?\n
-        \nThink back to 2nd grade and remember math class teaching you the 1\'s, 10\'s, and 100\'s places.\n
-        \nNow let\'s write out 512 with the places underneath.
+    <string name="decimalsystem">So, we all know the number 512. But why does 512 equal, well…512? How do we determine its value?\n
+        \nWe have a system.It\’s called decimal, or base 10, and you learned it in elementary school.\n
+        \nThink back to 2nd grade when you first learned the place values.\n
         \n
     </string>
 
     <string name="decimalsystem2">
-        \nWhen you write this out, you\’re saying that you have 5 one hundreds, 1 ten, and 2 ones.
-        \n\n
+        \nHow would we calculate 512?\n
+        \n5 is in nthe hundreds place, so we multiply: 5 x 100 = 500\n
+        \n1 is in the tens place, so we multiply: 1 x 10 = 10\n
+        \n2 is in the ones place, so we multiply: 2 x 1 = 2\n
+        \n500 + 10 +2 = 512\n
+        \nSo that\’s how we know the value of 512!\n
+        \n
     </string>
     <string name="decimalsystem3">
         \n
-        \nThis should be how you first learned how to count with the hundreds and tens places. Now that you\'re refreshed, let\'s move to something new.\n\n
+        \nIf all of this is sounding really basic, that\’s because it is. However, it\’s all for your benefit, trust me.\n\n
     </string>
 
-    <string name="reading1">So before diving into binary numbers, you need to learn how to read bases other than decimal.\n
-        \nWhen working in other bases, such as binary and octal, it’s easier to think through a problem if you read the digits rather than read the number as a whole.
-        \n
-        \nLet\’s look at 512 again.\n
+    <string name="reading1">The hundreds place has a value of 100 (that’s why we multiply 5 by 100). And the tens place has a value of 10, and the ones place has a value of 1. Etc, etc.\n
+        \nBut how did the ones, tens, and hundreds place values come about, anyway?\n
+        \nWell, exponents play a big role in that. Think about it.
     </string>
 
-    <string name="fivehundredtwelve">\t512</string>
-
-    <string name="reading2">\nTry reading it as “five, one, two” instead of reading “five hundred twelve”.
-        \nGot it?
-        \nNow do the same thing with\n
+    <string name="reading2">Seeing the pattern?\n
+        \nEvery system has a specific base that it\’s built around. In the decimal system, we use base 10, which is why we use the exponents of ten to get the place values!\n
+        \nBut what if we were using binary?\n \nIn binary, we use base two. So, if we want to get the place values, we would have to use the exponents of two, just like we used the exponents of ten to get the place values for the decimal system.
     </string>
 
-    <string name="ten">\t10</string>
+    <string name="reading3">And so on.\n
+        \nSo, when we\’re using binary, we’d set it up like this…</string>
 
-    <string name="reading3">\nDid you read “ten” or “one, zero”? If you read “ten”, keep practicing. If you read “one, zero”, you\'re on the right track.\n\n</string>
+    <string name="bases">Hopefully, that’s making sense. If not, go back and review, because we\’re moving on to trickier stuff now. We\’re going to learn how to convert numbers from the decimal system to the binary system and vice versa.\n
+        \nFirstly, let\’s say you have 101 in binary. How on earth do you convert it to decimal?\n
+        \nWell, remember how we did it for 512? We multiplied each number by the place value it was in.\n
+        \n1 is in the 4s place. 1 x 4 = 4\n
+        \n0 is in the 2s place. 1 x 2 = 0\n
+        \n1 is in the 1s place. 1 x 1 = 1\n
+        \n4 + 0 + 1 = 5\n
+        \nNotice that the only digits we can use for binary are 0 and 1.\n
+</string>
 
-    <string name="bases">The decimal system is the system of numbers that we humans read. We use base 10, which is why we have the 10s place.
-        \nIn decimal, we have ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. In binary, we have only two digits: 0 and 1.
-        \nSimilar to the decimal system, binary has place values.  However, it uses different places. Instead of the hundreds, tens, and ones places, we have the ones, twos, fours, eights, and so on places. In order to help figure out the pattern, check out this chart.\n
+    <string name="bases2">\nNow let\’s try converting numbers from decimal to binary.\n
+    \nLet\’s say you have the number 9 in base 10 (or decimal).\n
+    \nWell, let\’s set up the place values for binary.\n
+    \nThe important thing when converting numbers from decimal to binary is the trick \“Go as high as you can, but no higher\”.\n
+    \nWhat that means is that, say you have the number 9. Which place value is the highest number we can get that\’s not higher than 9?\n
+    \nWhy, 8 of course. So le\t’s put a nice little 1 in the 8s place. (Use the picture below for reference)\n
+    \n\nNow, we need to subtract 8 from 9 to see how many numbers we still need to account for:\n
+    \n9 – 8 = 1\n
+    \nNext, what number is the biggest we can get without exceeding 1?\n
+    \nWell…1. So let\’s put a 1 in the ones place.\n
+    \nYou might be wondering, what about the two place values in between? The four and the twos place?\n
+    \nWell, we have the number 0 for a reason.
+</string>
+
+    <string name="practiceProblems">You can check your work, by the way, by converting the number back to decimal and seeing if it\’s the same thing.\n
+        \n1 x 8 = 8\n
+        \n0 x 4 = 0\n
+        \n0 x 2 = 0\n
+        \n1 x 1 = 1\n
+        \n8 + 0 +0 + 1 = 9  Yup, that’s right\n
+        \nSome practice problems should help you remember how to do all this. So let\'s practice.
     </string>
-    <string name="bases2">
-        \nBase 10 and base 2 to the zeroth power both correspond to a place value of one. In fact, the value of the first place equals one for all bases.\n
-        \nNow how about the bases to the first power? Both of them have a place value equal to the base itself. That goes for all bases, but to keep it simple, we\’re still using only these two bases.
-        \nTo get the next place value, just multiply the initial place value by the number of the base! In base 10, the place value is multiplied by 10 each time. In base 2 or binary, the place value doubles each time.
-        </string>
-    <string name="practiceProblems">
-        Think you\'re getting it? Let\'s try a few easy practice problems.
-        \n</string>
-    \n\tPlaceholder: Practice Problems 1
-    \n
-    <string name="practiceProblems2">\nGreat job! Did you notice something about those problems? Let\'s take a look at a few.\n</string>
+
+    <string name="practiceProblems2">Great job! Did you notice something about those problems? Let\'s take a look at a few.\n</string>
     <string name="practiceProblems21">\nHopefully you know that all these numbers are odd, but do you see something else that their binary equivalents have in common? They all end in 1! The only way to write any odd number in binary is to end it with a one.</string>
 
-    <string name="finishingup">That\’s all there is to it! You should be ready to get out there and start translating binary numbers into decimal numbers for humans to read, and vice versa.\n
-        \nYou can read this over again or you can head on back to the home menu by pressing the four rectangles in the top right hand corner and start practicing. Have fun and remember binary!
+    <string name="finishingup">That’s all there is to it\n You can read this over again or you can head on back to the home menu by pressing the four rectangles in the top right hand corner and start practicing.\n
+        \nDon\'t forget to expand to the Hexadecimal system when you\'re ready!\n
     </string>
 
     <string name ="hexIntro">
@@ -106,15 +127,15 @@
         \n\nThere’s 16 digits.
         \n\nWhat?? How can there by 16 digits?
         \n\nCalm down, we’ll explain. But first, let\’s make sure we know the place values.
-        \n\nAs usual, we get the exponents of the base (in this case, 16) to get the place values.
+        \n\nAs usual, we get the exponents of the base (in this case, 16) to get the place values.\n
     </string>
 
     <string name="hexIntro2">
-        \n\nSo it would look like this.
+        \nSo it would look like this.
     </string>
 
     <string name="hexIntro3">
-        \n\nAnd…we’ll stop there, before the numbers get too big and messy.
+        \nAnd…we’ll stop there, before the numbers get too big and messy.
     </string>
 
     <string name ="hexDigits">
@@ -128,7 +149,7 @@
     </string>
 
     <string name="hexDigits2">
-        \n\nBy the way, you may want to memorize the 16 digits of hexadecimal and what number of the decimal system they correspond to. It’s important in hexadecimal conversions.
+        \nBy the way, you may want to memorize the 16 digits of hexadecimal and what number of the decimal system they correspond to. It’s important in hexadecimal conversions.
     </string>
 
     <string name ="hexIntroB">

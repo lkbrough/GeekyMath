@@ -296,7 +296,11 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
                 count++;
             }
             prevAns="";
-        } else {//I don't know what else it could be... I already Sanity Checked an blank answer out...
+        }
+        else if(num1.equals("01010")&&practice) {
+            count = 11;
+        }
+        else{//I don't know what else it could be... I already Sanity Checked an blank answer out...
             correct = "Incorrect";
             streak = 0;//I would decrease it by one but this game as no checkpoints, there is now starting at a later level... Or maybe we could add that in later...
             prevAns=ans;

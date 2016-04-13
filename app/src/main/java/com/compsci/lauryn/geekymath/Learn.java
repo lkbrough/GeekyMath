@@ -133,26 +133,26 @@ public class Learn extends AppCompatActivity {
             TextView textView3 = (TextView) rootView.findViewById(R.id.Place3);
             TextView textView4 = (TextView) rootView.findViewById(R.id.Place4);
 
-            ImageView image = (ImageView) rootView.findViewById(R.id.Image0);
-            ImageView image1 = (ImageView) rootView.findViewById(R.id.Image1);
-            ImageView image2 = (ImageView) rootView.findViewById(R.id.Image2);
-            ImageView image3 = (ImageView) rootView.findViewById(R.id.Image3);
-            ImageView image4 = (ImageView) rootView.findViewById(R.id.Image4);
+            ImageView imageView = (ImageView) rootView.findViewById(R.id.Image0);
+            ImageView imageView1 = (ImageView) rootView.findViewById(R.id.Image1);
+            ImageView imageView2 = (ImageView) rootView.findViewById(R.id.Image2);
+            ImageView imageView3 = (ImageView) rootView.findViewById(R.id.Image3);
+            ImageView imageView4 = (ImageView) rootView.findViewById(R.id.Image4);
 
             if (hex) {
                 if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
                     textView.setText(R.string.hexIntro);
                     textView.setTextSize(20);
-                    image.setImageResource(R.drawable.sixteenbases2);
+                    imageView.setImageResource(R.drawable.sixteenbases2);
                     textView1.setText(R.string.hexIntro2);
                     textView1.setTextSize(20);
-                    image1.setImageResource(R.drawable.pic_of_num);
+                    imageView1.setImageResource(R.drawable.hexplaces);
                     textView2.setText(R.string.hexIntro3);
                     textView2.setTextSize(20);
                 } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
                     textView.setText(R.string.hexDigits);
                     textView.setTextSize(20);
-                    image.setImageResource(R.drawable.hextable);
+                    imageView.setImageResource(R.drawable.hextable);
                     textView1.setText(R.string.hexDigits2);
                     textView1.setTextSize(20);
                 } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
@@ -164,60 +164,72 @@ public class Learn extends AppCompatActivity {
                 } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
                     textView.setText(R.string.hexToDec);
                     textView.setTextSize(20);
+                    textView1.setText(R.string.hexInput);
+                    textView.setTextSize(20);
                 }
 
             } else {
-                if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
+                if (getArguments().getInt(ARG_SECTION_NUMBER)==1) {
                     textView.setText(getString(R.string.intro));
-                } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
+                }
+                else if(getArguments().getInt(ARG_SECTION_NUMBER)==2) {
                     textView.setText(getString(R.string.decimalsystem));
                     textView1 = (TextView) rootView.findViewById(R.id.Place1);
-                    textView1.setText(getString(R.string.fivehundredtwelve));
-                    textView1.setTextSize(30);
+                    textView1.setTextSize(20);
+                    imageView1.setImageResource(R.drawable.pic_of_num);
                     textView2.setText(getString(R.string.decimalsystem2));
                     textView2.setTextSize(20);
-                    image2.setImageResource(R.drawable.pic_of_num);
+                    imageView2.setImageResource(R.drawable.pic_of_num);
 
                     textView3.setText(getString(R.string.decimalsystem3));
                     textView3.setTextSize(20);
-                } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
+                }
+                else if(getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
                     textView.setText(getString(R.string.reading1));
-                    textView1.setText(getString(R.string.fivehundredtwelve));
-                    textView1.setTextSize(30);
+                    textView1.setTextSize(20);
+                    imageView1.setImageResource(R.drawable.binaryplaces);
                     textView2.setText(getString(R.string.reading2));
                     textView2.setTextSize(20);
-                    textView3.setText(getString(R.string.ten));
-                    textView3.setTextSize(30);
+                    imageView2.setImageResource(R.drawable.binaryplaces);
                     textView4.setText(getString(R.string.reading3));
                     textView4.setTextSize(20);
-                } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
+                    imageView4.setImageResource(R.drawable.binaryplaces);
+                } else if (getArguments().getInt(ARG_SECTION_NUMBER)==4) {
+                    imageView1.setImageResource(R.drawable.fiveplace);
                     textView.setText(getString(R.string.bases));
-                    image1.setImageResource(R.drawable.graph);
+                    imageView.setImageResource(R.drawable.graph);
 
                     textView1.setText(getString(R.string.bases2));
                     textView1.setTextSize(20);
-                } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
+                }
+                else if(getArguments().getInt(ARG_SECTION_NUMBER)==5) {
                     textView.setText(getString(R.string.practiceProblems));
-                } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 6) {
-                    if (passed) {
-                        Learn.flipper1 = true;
+                }
+                else if(getArguments().getInt(ARG_SECTION_NUMBER)==6){
+                    if(passed){
+                        Learn.flipper1=true;
                     }
-                } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 7) {
+                }
+                else if(getArguments().getInt(ARG_SECTION_NUMBER)==7){
                     Test.practice = true;
                     Intent intent = new Intent(getActivity(), Test.class);
                     startActivity(intent);
-                } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 8) {
-                    if (passed) {
-                        Learn.flipper2 = true;
+                }
+                else if(getArguments().getInt(ARG_SECTION_NUMBER)==8){
+                    if(passed){
+                        Learn.flipper2=true;
                     }
-                } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 9) {
+                }
+                else if(getArguments().getInt(ARG_SECTION_NUMBER)==9){
                     textView.setText(getString(R.string.practiceProblems2));
-                    image1.setImageResource(R.drawable.practiceproblems);
+                    imageView.setImageResource(R.drawable.practiceproblems);
                     textView1.setText(getString(R.string.practiceProblems21));
                     textView1.setTextSize(20);
-                } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 10) {
+                }
+                else if(getArguments().getInt(ARG_SECTION_NUMBER)==10) {
                     textView.setText(getString(R.string.finishingup));
-                } else
+                }
+                else
                     textView.setText(getString(R.string.invalid));
                 textView.setTextSize(20);
             }
