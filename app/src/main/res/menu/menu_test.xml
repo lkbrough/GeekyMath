@@ -3,14 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.compsci.lauryn.geekymath.Test">
 
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="never"
-        />
-
     <item android:id="@+id/main_menu"
-        android:icon="@drawable/ic_dashboard_white_18dp"
+        android:icon="@drawable/ic_action_name"
         android:title="@string/menu"
         android:orderInCategory="100"
         app:showAsAction="ifRoom"

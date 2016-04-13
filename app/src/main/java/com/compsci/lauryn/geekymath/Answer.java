@@ -49,9 +49,6 @@ public class Answer extends AppCompatActivity {//Basics extend something and bec
             return true;
         }
         //noinspection SimplifiableIfStatement
-        else if (id == R.id.action_settings) {//Pointless for now
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

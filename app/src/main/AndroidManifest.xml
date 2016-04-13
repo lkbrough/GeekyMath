@@ -6,30 +6,33 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
 
         <activity
             android:name=".MainMenu"
             android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
             android:name=".Test"
-            android:label="@string/title_activity_test"/>
+            android:label="@string/title_activity_test"
+            android:windowSoftInputMode="stateHidden"
+            />
 
-        <activity
+        <!--<activity
             android:name=".Answer"
-            android:label="@string/title_activity_answer"/>
+            android:label="@string/title_activity_answer"/>-->
 
         <activity
             android:name=".Learn"
             android:label="@string/title_activity_learn"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <service
             android:name=".HexInputIME"
@@ -37,13 +40,13 @@
             android:permission="android.permission.BIND_INPUT_METHOD">
             <meta-data
                 android:name="android.view.im"
-                android:resource="@xml/method"/>
-            <intent-filter>
-                <action android:name="android.view.InputMethod"/>
-            </intent-filter>
+                android:resource="@xml/method" />
 
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
         </service>
 
+        <activity android:name=".MainActivitywasd"/>
     </application>
 </manifest>
-

@@ -43,27 +43,23 @@ public class MainMenu extends AppCompatActivity {//Bare nessesity to Extend some
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
 
     public void load(View view){//The only method I needed to write to make it work, I personally think I did pretty good job JK I tried
-        Intent intent=new Intent(this, Test.class);//Pass between MainMenu and Test Activities
-        if(view.getId()==R.id.learn)
-            intent=new Intent(this, Learn.class);//Change it just because we need to access Learn instead
-        if(view.getId()==R.id.l3)//Set Global Variables
-            Test.level=3;
-        else if(view.getId()==R.id.l2)//Ditto
-            Test.level=2;
-        else if(view.getId()==R.id.l4)
-            Test.level=4;
-        else
-            Test.level=1;//Ditto as well as a best error send
-        Test.quest=true;//Just to generate a new question in Test
+        Intent intent=new Intent(this, Learn.class);//Pass between MainMenu and Test Activities
+        if(view.getId()==R.id.learn2){
+            Learn.hex=true;
+        }
+        else if(view.getId()==R.id.learn){
+            Learn.hex=false;
+        }
         startActivity(intent);//Onto Test! (or possibly Learn)
+    }
+    public void billy(View view){
+        Intent wasd=new Intent(this, MainActivitywasd.class);
+        startActivity(wasd);
     }
 
 
