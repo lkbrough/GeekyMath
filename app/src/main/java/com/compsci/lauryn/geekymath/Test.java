@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.text.method.DigitsKeyListener;
+import android.text.method.KeyListener;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,12 +24,12 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
     private static String instructions;//This is the instructions that are displayed before the problem. This could be a set string, but it needs to change depending on the level.
     private static int streak = 0;//This is the players streak. It serves to purposes, making the player feel proud of how many problems they have gotten in a row and to determine if it needs to get harder by increasing the number of bits.
     public static boolean type;//This is set to limit the keyboard or not. It depends on the problem type on the keyboard.
-    public static boolean quest;//This is set to generate the problem or not. This only exists because on screen rotation, Android restarts the activity and destroys a lot of data.
+    public static boolean quest=false;//This is set to generate the problem or not. This only exists because on screen rotation, Android restarts the activity and destroys a lot of data.
     public static boolean practice = false;
     public static int count = 0;
     private static boolean hexKey;
     private String prevAns="";
-    private String[] prevQuest=new String[5];
+    private String[] prevQuest={"xyz","xyz","xyz","xyz","xyz"};
     private static int loc=0;
 
     @Override
@@ -36,7 +37,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
         if(level==4||level==5||level==6) {
-            Snackbar snackbar = Snackbar.make(findViewById(R.id.Layout), R.string.hexInput, Snackbar.LENGTH_INDEFINITE);
+            Snackbar snackbar = Snackbar.make(findViewById(R.id.Layout), R.string.hexInputShort, Snackbar.LENGTH_INDEFINITE);
             snackbar.show();
         }
     }
@@ -109,11 +110,6 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
             } else
                 editText.setKeyListener(DigitsKeyListener.getInstance("0123456789"));//Limit the keyboard... Well not really
         }
-    }
-
-    public void onPause() {
-        super.onPause();
-        quest = true;
     }
 
     @Override
@@ -218,20 +214,21 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
     public void generateProblem4() {
         instructions = "Convert the following number to hexadecimal.";
         if (streak <= 25 && streak > 15) {
-            num = Integer.toString((int) (Math.random() * 64));
+            temp = (int) (Math.random() * 64);
         } else if (streak <= 45 && streak > 25) {
-            num = Integer.toString((int) (Math.random() * 128));
+            temp = (int) (Math.random() * 128);
         } else if (streak >= 65) {
-            num = Integer.toString((int) (Math.random() * 256));
+            temp = (int) (Math.random() * 256);
         } else {
-            num = Integer.toString((int) (Math.random() * 32));
+            temp = (int) (Math.random() * 32);
         }
-        if(noRepeat(num)){
+        if(noRepeat(Integer.toString(temp))){
             generateProblem4();
         }
         hexKey = true;
-        type = false;
-        ans = Integer.toString(Integer.parseInt(num), 16);
+        type = true;
+        ans = Integer.toString(temp, 16);
+        num = Integer.toString(temp);
     }
 
     public void generateProblem5() {
@@ -245,13 +242,14 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         } else {
             temp = (int) (Math.random() * 32);
         }
-        if(noRepeat(num)){
+        if(noRepeat(Integer.toString(temp))){
             generateProblem5();
         }
         hexKey = true;
-        type = true;
+        type = false;
         num=Integer.toString(temp,16);
         ans=Integer.toString(temp);
+        num=num.toUpperCase();
     }
 
     public void generateProblem6() {//Interesting one... Let's mix it up!
@@ -271,8 +269,10 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         EditText editText = (EditText) findViewById(R.id.answerBox);//Get the answer box... again.
 
         String message = editText.getText().toString();//Get the answer in the box
-        if (message.isEmpty())//Sanity Check! Cuz you never know with people and because I already limited the keyboard they can't enter a letter.
+        if (message.isEmpty()) {//Sanity Check! Cuz you never know with people and because I already limited the keyboard they can't enter a letter.
             correct = "Enter an answer";//Yell at the user for being overly silly!
+            prevAns=ans;
+        }
         else {
             check(message);//Scroll just a little bit to look at this method...
         }
@@ -313,7 +313,7 @@ public class Test extends AppCompatActivity {//Extending to make it an activity
         streak = 0;
         count = 0;
         for(int x=0;x<prevQuest.length;x++){
-            prevQuest[x]="null";
+            prevQuest[x]="XYZ";
         }
     }
 
