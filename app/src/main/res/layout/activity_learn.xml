@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.compsci.lauryn.geekymath.Learn">
+    tools:context="com.compsci.betadevelopment.geekymath.Learn">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
