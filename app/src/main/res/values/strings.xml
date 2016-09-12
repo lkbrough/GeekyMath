@@ -87,7 +87,7 @@
         \nFirstly, let\’s say you have 101 in binary. How on earth do you convert it to decimal?\n
         \nWell, remember how we did it for 512? We multiplied each number by the place value it was in.\n
         \n1 is in the 4s place. 1 x 4 = 4\n
-        \n0 is in the 2s place. 1 x 2 = 0\n
+        \n0 is in the 2s place. 0 x 2 = 0\n
         \n1 is in the 1s place. 1 x 1 = 1\n
         \n4 + 0 + 1 = 5\n
         </string>
