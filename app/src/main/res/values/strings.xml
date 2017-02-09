@@ -121,7 +121,7 @@
     <string name="practiceProblems21">\nHopefully you know that all these numbers are odd, but do you see something else that their binary equivalents have in common? They all end in 1! The only way to write any odd number in binary is to end it with a one.</string>
 
     <string name="finishingup">That’s all there is to it\n
-        \nYou can read this over again or you can head on back to the home menu by pressing the four rectangles in the top right hand corner and start practicing.\n
+        \nYou can read this over again or you can head on back to the home menu by pressing the house in the top right hand corner and start practicing.\n
         \nDon\'t forget to expand to the Hexadecimal system when you\'re ready!\n
     </string>
 
